@@ -23,7 +23,6 @@ function poker(){
     }
         else one = 'A';
 
-
     if (two == 1 ){
         two = "9";
     }
