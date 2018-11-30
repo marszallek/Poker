@@ -1,22 +1,22 @@
 
-    var one = Math.round(Math.random() * 5 + 1);
-    var two = Math.round(Math.random() * 5 + 1);
-    var three = Math.round(Math.random() * 5 + 1);
-    var four = Math.round(Math.random() * 5 + 1);
-    var five = Math.round(Math.random() * 5 + 1);
+    var one = Math.round(Math.random() * 24 + 1);
+    var two = Math.round(Math.random() * 24 + 1);
+    var three = Math.round(Math.random() * 24 + 1);
+    var four = Math.round(Math.random() * 24 + 1);
+    var five = Math.round(Math.random() * 24 + 1);
 	
 function poker(){
     if (one == 1 ){
-        one = "9";
+        one = '9' + 'spade';
     }
         else if (one == 2){
-        one = '10';
+        one = '9' + 'diamond';
     }
         else if (one == 3){
-        one = 'J';
+        one = '9' + 'club';
     }
         else if (one == 4){
-        one = 'Q';
+        one = '9' + 'heart';
     }
         else if (one == 5){
         one = 'K';
