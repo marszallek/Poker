@@ -4,383 +4,384 @@
     var three = Math.round(Math.random() * 23 + 1);
     var four = Math.round(Math.random() * 23 + 1);
     var five = Math.round(Math.random() * 23 + 1);
-	
-function poker(){
+function poker(){	
+    //first card on hand
     if ( one === 1){
-            one = '9' + 'spade';
+            one = '9' + ' spade';
     }
         else if (one == 2){
-        one = '9' + 'diamond';
+        one = '9' + ' club';
     }
         else if (one == 3){
-        one = '9' + 'club';
+        one = '9' + ' diamond';
     }
         else if (one == 4){
-        one = '9' + 'heart';
+        one = '9' + ' heart';
     }
         else if (one == 5){
-        one = '10' + 'spade';
+        one = '10' + ' spade';
     }
         else if (one == 6){
-        one = '10' + 'diamond';
+        one = '10' + ' club';
     }
         else if (one == 7){
-        one = '10' + 'club';
+        one = '10' + ' diamond';
     }
         else if (one == 8){
-        one = '10' + 'heart';
+        one = '10' + ' heart';
     }
         else if (one == 9){
-        one = 'J' + 'spade';
+        one = 'J' + ' spade';
     }
         else if (one == 10){
-        one = 'J' + 'diamond';
+        one = 'J' + ' club';
     }
         else if (one == 11){
-        one = 'J' + 'club';
+        one = 'J' + ' diamond';
     }
         else if (one == 12){
-        one = 'J' + 'heart';
+        one = 'J' + ' heart';
     }
         else if (one == 13){
-        one = 'Q' + 'spade';
+        one = 'Q' + ' spade';
     }
         else if (one == 14){
-        one = 'Q' + 'diamond';
+        one = 'Q' + ' club';
     }
         else if (one == 15){
-        one = 'Q' + 'club';
+        one = 'Q' + ' diamond';
     }
         else if (one == 16){
-        one = 'Q' + 'heart';
+        one = 'Q' + ' heart';
     }   
         else if (one == 17){
-        one = 'K' + 'spade';
+        one = 'K' + ' spade';
     }
         else if (one == 18){
-        one = 'K' + 'diamond';
+        one = 'K' + ' club';
     }
         else if (one == 19){
-        one = 'K' + 'club';
+        one = 'K' + ' diamond';
     }
         else if (one == 20){
-        one = 'K' + 'heart';
+        one = 'K' + ' heart';
     }    
         else if (one == 21){
-        one = 'A' + 'spade';
+        one = 'A' + ' spade';
     }
         else if (one == 22){
-        one = 'A' + 'diamond';
+        one = 'A' + ' club';
     }
         else if (one == 23){
-        one = 'A' + 'club';
+        one = 'A' + ' diamond';
     }
         else if (one == 24){
-        one = 'A' + 'heart';
+        one = 'A' + ' heart';
     }
-
+    //second card on hand
     if (two == 1 ){
-        two = '9' + 'spade';
+        two = '9' + ' spade';
     }
         else if (two == 2){
-        two = '9' + 'diamond';
+        two = '9' + ' club';
     }
         else if (two == 3){
-        two = '9' + 'club';
+        two = '9' + ' diamond';
     }
         else if (two == 4){
-        two = '9' + 'heart';
+        two = '9' + ' heart';
     }
         else if (two == 5){
-        two = '10' + 'spade';
+        two = '10' + ' spade';
     }
         else if (two == 6){
-        two = '10' + 'diamond';
+        two = '10' + ' club';
     }
         else if (two == 7){
-        two = '10' + 'club';
+        two = '10' + ' diamond';
     }
         else if (two == 8){
-        two = '10' + 'heart';
+        two = '10' + ' heart';
     }
         else if (two == 9){
-        two = 'J' + 'spade';
+        two = 'J' + ' spade';
     }
         else if (two == 10){
-        two = 'J' + 'diamond';
+        two = 'J' + ' club';
     }
         else if (two == 11){
-        two = 'J' + 'club';
+        two = 'J' + ' diamond';
     }
         else if (two == 12){
-        two = 'J' + 'heart';
+        two = 'J' + ' heart';
     }
         else if (two == 13){
-        two = 'Q' + 'spade';
+        two = 'Q' + ' spade';
     }
         else if (two == 14){
-        two = 'Q' + 'diamond';
+        two = 'Q' + ' club';
     }
         else if (two == 15){
-        two = 'Q' + 'club';
+        two = 'Q' + ' diamond';
     }
         else if (two == 16){
-        two = 'Q' + 'heart';
+        two = 'Q' + ' heart';
     }   
         else if (two == 17){
-        two = 'K' + 'spade';
+        two = 'K' + ' spade';
     }
         else if (two == 18){
-        two = 'K' + 'diamond';
+        two = 'K' + ' club';
     }
         else if (two == 19){
-        two = 'K' + 'club';
+        two = 'K' + ' diamond';
     }
         else if (two == 20){
-        two = 'K' + 'heart';
+        two = 'K' + ' heart';
     }    
         else if (two == 21){
-        two = 'A' + 'spade';
+        two = 'A' + ' spade';
     }
         else if (two == 22){
-        two = 'A' + 'diamond';
+        two = 'A' + ' club';
     }
         else if (two == 23){
-        two = 'A' + 'club';
+        two = 'A' + ' diamond';
     }
         else if (two == 24){
-        two = 'A' + 'heart';
+        two = 'A' + ' heart';
     }
-
+    //third card on hand
     if (three == 1 ){
-        three = '9' + 'spade';
+        three = '9' + ' spade';
     }
         else if (three == 2){
-        three = '9' + 'diamond';
+        three = '9' + ' club';
     }
         else if (three == 3){
-        three = '9' + 'club';
+        three = '9' + ' diamond';
     }
         else if (three == 4){
-        three = '9' + 'heart';
+        three = '9' + ' heart';
     }
         else if (three == 5){
-        three = '10' + 'spade';
+        three = '10' + ' spade';
     }
         else if (three == 6){
-        three = '10' + 'diamond';
+        three = '10' + ' club';
     }
         else if (three == 7){
-        three = '10' + 'club';
+        three = '10' + ' diamond';
     }
         else if (three == 8){
-        three = '10' + 'heart';
+        three = '10' + ' heart';
     }
         else if (three == 9){
-        three = 'J' + 'spade';
+        three = 'J' + ' spade';
     }
         else if (three == 10){
-        three = 'J' + 'diamond';
+        three = 'J' + ' club';
     }
         else if (three == 11){
-        three = 'J' + 'club';
+        three = 'J' + ' diamond';
     }
         else if (three == 12){
-        three = 'J' + 'heart';
+        three = 'J' + ' heart';
     }
         else if (three == 13){
-        three = 'Q' + 'spade';
+        three = 'Q' + ' spade';
     }
         else if (three == 14){
-        three = 'Q' + 'diamond';
+        three = 'Q' + ' club';
     }
         else if (three == 15){
-        three = 'Q' + 'club';
+        three = 'Q' + ' diamond';
     }
         else if (three == 16){
-        three = 'Q' + 'heart';
+        three = 'Q' + ' heart';
     }   
         else if (three == 17){
-        three = 'K' + 'spade';
+        three = 'K' + ' spade';
     }
         else if (three == 18){
-        three = 'K' + 'diamond';
+        three = 'K' + ' club';
     }
         else if (three == 19){
-        three = 'K' + 'club';
+        three = 'K' + ' diamond';
     }
         else if (three == 20){
-        three = 'K' + 'heart';
+        three = 'K' + ' heart';
     }    
         else if (three == 21){
-        three = 'A' + 'spade';
+        three = 'A' + ' spade';
     }
         else if (three == 22){
-        three = 'A' + 'diamond';
+        three = 'A' + ' club';
     }
         else if (three == 23){
-        three = 'A' + 'club';
+        three = 'A' + ' diamond';
     }
         else if (three == 24){
-        three = 'A' + 'heart';
+        three = 'A' + ' heart';
     }
-
+        //four card on hand
     if (four == 1 ){
-        four = '9' + 'spade';
+        four = '9' + ' spade';
     }
         else if (four == 2){
-        four = '9' + 'diamond';
+        four = '9' + ' club';
     }
         else if (four == 3){
-        four = '9' + 'club';
+        four = '9' + ' diamond';
     }
         else if (four == 4){
-        four = '9' + 'heart';
+        four = '9' + ' heart';
     }
         else if (four == 5){
-        four = '10' + 'spade';
+        four = '10' + ' spade';
     }
         else if (four == 6){
-        four = '10' + 'diamond';
+        four = '10' + ' club';
     }
         else if (four == 7){
-        four = '10' + 'club';
+        four = '10' + ' diamond';
     }
         else if (four == 8){
-        four = '10' + 'heart';
+        four = '10' + ' heart';
     }
         else if (four == 9){
-        four = 'J' + 'spade';
+        four = 'J' + ' spade';
     }
         else if (four == 10){
-        four = 'J' + 'diamond';
+        four = 'J' + ' club';
     }
         else if (four == 11){
-        four = 'J' + 'club';
+        four = 'J' + ' diamond';
     }
         else if (four == 12){
-        four = 'J' + 'heart';
+        four = 'J' + ' heart';
     }
         else if (four == 13){
-        four = 'Q' + 'spade';
+        four = 'Q' + ' spade';
     }
         else if (four == 14){
-        four = 'Q' + 'diamond';
+        four = 'Q' + ' club';
     }
         else if (four == 15){
-        four = 'Q' + 'club';
+        four = 'Q' + ' diamond';
     }
         else if (four == 16){
-        four = 'Q' + 'heart';
+        four = 'Q' + ' heart';
     }   
         else if (four == 17){
-        four = 'K' + 'spade';
+        four = 'K' + ' spade';
     }
         else if (four == 18){
-        four = 'K' + 'diamond';
+        four = 'K' + ' club';
     }
         else if (four == 19){
-        four = 'K' + 'club';
+        four = 'K' + ' diamond';
     }
         else if (four == 20){
-        four = 'K' + 'heart';
+        four = 'K' + ' heart';
     }    
         else if (four == 21){
-        four = 'A' + 'spade';
+        four = 'A' + ' spade';
     }
         else if (four == 22){
-        four = 'A' + 'diamond';
+        four = 'A' + ' club';
     }
         else if (four == 23){
-        four = 'A' + 'club';
+        four = 'A' + ' diamond';
     }
         else if (four == 24){
-        four = 'A' + 'heart';
-    }
-
+        four = 'A' + ' heart';
+}
+    //fifth card  on hand
     if (five == 1 ){
-        five = '9' + 'spade';
+        five = '9' + ' spade';
     }
         else if (five == 2){
-        five = '9' + 'diamond';
+        five = '9' + ' club';
     }
         else if (five == 3){
-        five = '9' + 'club';
+        five = '9' + ' diamond';
     }
         else if (five == 4){
-        five = '9' + 'heart';
+        five = '9' + ' heart';
     }
         else if (five == 5){
-        five = '10' + 'spade';
+        five = '10' + ' spade';
     }
         else if (five == 6){
-        five = '10' + 'diamond';
+        five = '10' + ' club';
     }
         else if (five == 7){
-        five = '10' + 'club';
+        five = '10' + ' diamond';
     }
         else if (five == 8){
-        five = '10' + 'heart';
+        five = '10' + ' heart';
     }
         else if (five == 9){
-        five = 'J' + 'spade';
+        five = 'J' + ' spade';
     }
         else if (five == 10){
-        five = 'J' + 'diamond';
+        five = 'J' + ' club';
     }
         else if (five == 11){
-        five = 'J' + 'club';
+        five = 'J' + ' diamond';
     }
         else if (five == 12){
-        five = 'J' + 'heart';
+        five = 'J' + ' heart';
     }
         else if (five == 13){
-        five = 'Q' + 'spade';
+        five = 'Q' + ' spade';
     }
         else if (five == 14){
-        five = 'Q' + 'diamond';
+        five = 'Q' + ' club';
     }
         else if (five == 15){
-        five = 'Q' + 'club';
+        five = 'Q' + ' diamond';
     }
         else if (five == 16){
-        five = 'Q' + 'heart';
+        five = 'Q' + ' heart';
     }   
         else if (five == 17){
-        five = 'K' + 'spade';
+        five = 'K' + ' spade';
     }
         else if (five == 18){
-        five = 'K' + 'diamond';
+        five = 'K' + ' club';
     }
         else if (five == 19){
-        five = 'K' + 'club';
+        five = 'K' + ' diamond';
     }
         else if (five == 20){
-        five = 'K' + 'heart';
+        five = 'K' + ' heart';
     }    
         else if (five == 21){
-        five = 'A' + 'spade';
+        five = 'A' + ' spade';
     }
         else if (five == 22){
-        five = 'A' + 'diamond';
+        five = 'A' + ' club';
     }
         else if (five == 23){
-        five = 'A' + 'club';
+        five = 'A' + ' diamond';
     }
         else if (five == 24){
-        five = 'A' + 'heart';
+        five = 'A' + ' heart';
     }
-    
         var my = [one, two, three, four, five];
-		document.getElementById("pok1").innerHTML = my.join(' ');
-    }
+        document.getElementById('pok1').innerHTML = my.join(' ');
+}
+        
 function hand(){
+        //4 of a Kind
 	if ((one === two && one === three && one === four) || (one === two && one === three && one === five) ||
 		(one === two && one === four && one === five) || (one === three && one === four && one === five) ||
 		(two === three && two === four && two === five)) {
 		document.getElementById("pair").innerHTML = '4 Of a Kind';
 		}
-		
+		//Full House
     else if ((one === two && three === four && three === five) || (one === three && two === four && two === five) ||
 		(one === four && two === three && two === five) || (one === five && two === three && two === four) ||
 		(one === two && one === three && four === five) || (one === two && one === four && three === five) || 
@@ -388,7 +389,7 @@ function hand(){
 		{
         document.getElementById("pair").innerHTML = 'Full House';
     } 
-
+        //3 of a Kind
     else if ((one === two && one === three) || (one === two && one === four) || (one === two && one === five) ||
 		(one === three && one === four) || (one === three && one === five) || (one === four && one === five) ||
         (two == three && two == four) || (two === three && two === five) || (two === four && two === five) ||
@@ -396,7 +397,7 @@ function hand(){
 
         document.getElementById("pair").innerHTML = '3 Of a Kind';
     }
-	
+        //2 Pairs
 	else if ((one === two && three === four) || (one === two && three === five) || (one === two && four === five) ||
 		(one === three && two === four) || (one === three && two === five) || (one === three && four === five) ||
 		(one === four && two === three) || (one === four && two === five) || (one === four && three === five) ||
@@ -405,7 +406,7 @@ function hand(){
 				
 			document.getElementById("pair").innerHTML = '2 Pairs';
 	}
-			
+        //Pair
     else if ((one === two) || (one === three) || (one === four) || (one === five) || (two === three) || (two === four) || (two === five) ||
         (three === four) || (three === five) || (four === five)){
 
