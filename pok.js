@@ -1,9 +1,22 @@
-    var one = Math.round(Math.random() * 23 + 1);
-    var two = Math.round(Math.random() * 23 + 1);
-    var three = Math.round(Math.random() * 23 + 1);
-    var four = Math.round(Math.random() * 23 + 1);
-    var five = Math.round(Math.random() * 23 + 1);
-function poker(){	
+var one;
+var two;
+var three;
+var four;
+var five;
+function random(){
+        one = Math.round(Math.random() * 23 + 1);
+        two = Math.round(Math.random() * 23 + 1);
+        three = Math.round(Math.random() * 23 + 1);
+        four = Math.round(Math.random() * 23 + 1);
+        five = Math.round(Math.random() * 23 + 1);
+        if (one === two || one === three || one === four || one === five ||
+            two === three || two === four || two == five
+            || three === four || three === five || four === five){
+                random()
+            }
+};
+
+function check(){
     //first card on hand
     if ( one === 1){
             document.getElementById('first').src = 'cards/1.png';

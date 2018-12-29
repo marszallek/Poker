@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" />
 </head>
-<body onload="poker(); hand();">
+<body>
     <div><h2>Classic poker</h2></div>
+    <button onclick="random(); check(); pair();">PLAY</button>
     <div id="pok1"></div>
     <ul class="flexi">
         <li><img class="cards" id="first" src="cards/default.png"></li>
@@ -16,8 +17,8 @@
         <li><img class="cards" id="third" src="cards/default.png"></li>
         <li><img class="cards" id="fourth" src="cards/default.png"></li>
         <li><img class="cards" id="fifth" src="cards/default.png"></li>
-    </ul>
-    <div id="pair"></div>
+    </ul> 
+    <div id="whatsOnHand"></div>
     <script src="pok.js"></script>
     <script src="hand.js"></script>
 </body>

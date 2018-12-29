@@ -1,39 +1,75 @@
-function hand(){
-        //4 of a Kind
-	if ((one === two && one === three && one === four) || (one === two && one === three && one === five) ||
-		(one === two && one === four && one === five) || (one === three && one === four && one === five) ||
-		(two === three && two === four && two === five)) {
-		document.getElementById("pair").innerHTML = '4 Of a Kind';
-		}
-		//Full House
-    else if ((one === two && three === four && three === five) || (one === three && two === four && two === five) ||
-		(one === four && two === three && two === five) || (one === five && two === three && two === four) ||
-		(one === two && one === three && four === five) || (one === two && one === four && three === five) || 
-		(two === three && one === four && one === five) || (two === four && one === three && one === five))
-		{
-        document.getElementById("pair").innerHTML = 'Full House';
-    } 
-        //3 of a Kind
-    else if ((one === two && one === three) || (one === two && one === four) || (one === two && one === five) ||
-		(one === three && one === four) || (one === three && one === five) || (one === four && one === five) ||
-        (two == three && two == four) || (two === three && two === five) || (two === four && two === five) ||
-        (three === four && three === five)){
-
-        document.getElementById("pair").innerHTML = '3 Of a Kind';
-    }
-        //2 Pairs
-	else if ((one === two && three === four) || (one === two && three === five) || (one === two && four === five) ||
-		(one === three && two === four) || (one === three && two === five) || (one === three && four === five) ||
-		(one === four && two === three) || (one === four && two === five) || (one === four && three === five) ||
-        (one === five && two === three) || (one === five && two === four) || (one === five && three === four) || (two == three && four === five) ||
-        (two === four && three === five) || (two === five && three === four)){
-				
-			document.getElementById("pair").innerHTML = '2 Pairs';
-	}
-        //Pair
-    else if ((one === two) || (one === three) || (one === four) || (one === five) || (two === three) || (two === four) || (two === five) ||
-        (three === four) || (three === five) || (four === five)){
-
-        document.getElementById("pair").innerHTML = 'Pair'; 
-    }
-}
+function pair(){
+    if( //pairs of Aces
+        //one with, two, three, four and five
+        (one > 20 && one < 25 && two > 20 && two < 25 || one > 20 && one < 25 && three > 20 && three < 25
+            || one > 20 && one < 25 && four > 20 && four < 25 || one > 20 && one < 25 && five > 20 && five < 25 )
+            //two with three, four and five
+            || (two > 20 && two < 25 && three > 20 && three < 25 || two > 20 && two < 25 && four > 20 && four < 25
+            || two > 20 && two < 25 && five > 20 && five < 25)
+            //three with four and five
+            || (three > 20 && three < 25 && four > 20 && four < 25 || three > 20 && three < 25 && five > 20 && five < 25)
+            //four with five
+            || (four > 20 && four < 25 && five > 20 && five < 25)){
+            document.getElementById('whatsOnHand').innerHTML = 'Pair Of Aces';
+        }else if( //pairs of Kings
+                //one with, two, three, four and five
+                (one > 16 && one < 21 && two > 16 && two < 21 || one > 16 && one < 21 && three > 16 && three < 21
+                    || one > 16 && one < 21 && four > 16 && four < 21 || one > 16 && one < 21 && five > 16 && five < 21 )
+                    //two with three, four and five
+                    || (two > 16 && two < 21 && three > 16 && three < 21 || two > 16 && two < 21 && four > 16 && four < 21
+                    || two > 16 && two < 21 && five > 16 && five < 21)
+                    //three with four and five
+                    || (three > 16 && three < 21 && four > 16 && four < 21 || three > 16 && three < 21 && five > 16 && five < 21)
+                    //four with five
+                    || (four > 16 && four < 21 && five > 16 && five < 21)){
+                    document.getElementById('whatsOnHand').innerHTML = 'Pair Of Kings';
+        }else if(  //pairs of Queens
+                //one with, two. three, four and five
+                (one > 12 && one < 17 && two > 12 && two < 17 || one > 12 && one < 17 && three > 12 && three < 17
+                    || one > 12 && one < 17 && four > 12 && four < 17 || one > 12 && one < 17 && five > 12 && five < 17 )
+                    //two with three, four and five
+                    || (two > 12 && two < 17 && three > 12 && three < 17 || two > 12 && two < 17 && four > 12 && four < 17
+                    || two > 12 && two < 17 && five > 12 && five < 17)
+                    //three with four and five
+                    || (three > 12 && three < 17 && four > 12 && four < 17 || three > 12 && three < 17 && five > 12 && five < 17)
+                    //four with five
+                    || (four > 12 && four < 17 && five > 12 && five < 17)){
+                    document.getElementById('whatsOnHand').innerHTML = 'Pair Of Queens';
+        }else if( //pairs of Jackss
+                //one with, two. three, four and five
+                (one > 8 && one < 13 && two > 8 && two < 13 || one > 8 && one < 13 && three > 8 && three < 13
+                    || one > 8 && one < 13 && four > 8 && four < 13 || one > 8 && one < 13 && five > 8 && five < 13 )
+                    //two with three, four and five
+                    || (two > 8 && two < 13 && three > 8 && three < 13 || two > 8 && two < 13 && four > 8 && four < 13
+                    || two > 8 && two < 13 && five > 8 && five < 13)
+                    //three with four and five
+                    || (three > 8 && three < 13 && four > 8 && four < 13 || three > 8 && three < 13 && five > 8 && five < 13)
+                    //four with five
+                    || (four > 8 && four < 13 && five > 8 && five < 13)){
+                    document.getElementById('whatsOnHand').innerHTML = 'Pair Of Jacks';
+        }else if( //pairs of 10
+                //one with, two. three, four and five
+                (one > 4 && one < 9 && two > 4 && two < 9 || one > 4 && one < 9 && three > 4 && three < 9
+                    || one > 4 && one < 9 && four > 4 && four < 9 || one > 4 && one < 9 && five > 4 && five < 9 )
+                    //two with three, four and five
+                    || (two > 4 && two < 9 && three > 4 && three < 9 || two > 4 && two < 9 && four > 4 && four < 9
+                    || two > 4 && two < 9 && five > 4 && five < 9)
+                    //three with four and five
+                    || (three > 4 && three < 9 && four > 4 && four < 9 || three > 4 && three < 9 && five > 4 && five < 9)
+                    //four with five
+                    || (four > 4 && four < 9 && five > 4 && five < 9)){
+                    document.getElementById('whatsOnHand').innerHTML = 'Pair Of 10';
+        }else if( //pairs of 9
+                //one with, two. three, four and five
+                (one > 0 && one < 5 && two > 0 && two < 5 || one > 0 && one < 5 && three > 0 && three < 5
+                    || one > 0 && one < 5 && four > 0 && four < 5 || one > 0 && one < 5 && five > 0 && five < 5 )
+                    //two with three, four and five
+                    || (two > 0 && two < 5 && three > 0 && three < 5 || two > 0 && two < 5 && four > 0 && four < 5
+                    || two > 0 && two < 5 && five > 0 && five < 5)
+                    //three with four and five
+                    || (three > 0 && three < 5 && four > 0 && four < 5 || three > 0 && three < 5 && five > 0 && five < 5)
+                    //four with five
+                    || (four > 0 && four < 5 && five > 0 && five < 5)){
+                    document.getElementById('whatsOnHand').innerHTML = 'Pair Of 9';
+            }else document.getElementById('whatsOnHand').innerHTML = 'Try Again';
+}; 
