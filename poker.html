@@ -7,17 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css" />
 </head>
-<body onload="poker(); hand();" style="text-align: center; font-size: 40px; margin-top: 30vh;">
+<body onload="poker(); hand();">
     <div><h2>Classic poker</h2></div>
     <div id="pok1"></div>
-    <ul>
-        <li class="onHand"></li>
-        <li class="onHand"></li>
-        <li class="onHand"></li>
-        <li class="onHand"></li>
-        <li class="onHand"></li>
+    <ul class="flexi">
+        <li><img class="cards" id="first" src="cards/default.png"></li>
+        <li><img class="cards" id="second" src="cards/default.png"></li>
+        <li><img class="cards" id="third" src="cards/default.png"></li>
+        <li><img class="cards" id="fourth" src="cards/default.png"></li>
+        <li><img class="cards" id="fifth" src="cards/default.png"></li>
     </ul>
-    <div id="pair" style="padding: 60px; color: rgb(136, 51, 136); font-size: 70%;"></div>
+    <div id="pair"></div>
     <script src="pok.js"></script>
+    <script src="hand.js"></script>
 </body>
 </html>
