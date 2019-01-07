@@ -9,17 +9,25 @@ h2{
 
 .flexi{
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     list-style-type: none;
+    padding: 0px;
 }
 .cards{
-    width: 11,5vw;
-    height: 18vw;
+    width: 11vw;
+    height: 17vw;
 }
 
 #whatsOnHand{
     text-align: center;
     color: rgb(144, 115, 115);
-    font-size: 7vw;
+    font-size: 4vw;
+}
+
+button{
+    height: 5vw;
+    width: 10vw;
+}
+#play{
+   text-align: center;
 }
