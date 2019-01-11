@@ -4,11 +4,11 @@ var three;
 var four;
 var five;
 function random(){
-    one = Math.round(Math.random() * 23 + 1);
-    two = Math.round(Math.random() * 23 + 1);
-    three = Math.round(Math.random() * 23 + 1);
-    four = Math.round(Math.random() * 23 + 1);
-    five = Math.round(Math.random() * 23 + 1);
+    one = Math.floor(Math.random() * 24 + 1);
+    two = Math.floor(Math.random() * 24 + 1);
+    three = Math.floor(Math.random() * 24 + 1);
+    four = Math.floor(Math.random() * 24 + 1);
+    five = Math.floor(Math.random() * 24 + 1);
  
     if (one === two || one === three || one === four || one === five ||
         two === three || two === four || two === five
