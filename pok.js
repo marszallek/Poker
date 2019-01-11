@@ -9,8 +9,9 @@ function random(){
     three = Math.round(Math.random() * 23 + 1);
     four = Math.round(Math.random() * 23 + 1);
     five = Math.round(Math.random() * 23 + 1);
+ 
     if (one === two || one === three || one === four || one === five ||
-        two === three || two === four || two == five
+        two === three || two === four || two === five
         || three === four || three === five || four === five){
         random()
     };

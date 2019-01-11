@@ -1,17 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 html{
-    background-color: rgb(19, 95, 13);
+    background-color: rgb(134, 156, 133);
 }
 
 h2{
     text-align: center;
     font-size: 4vw;
+    margin: 6vw;
 }
 
 .flexi{
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    padding: 0px;
+    margin: 8vw;
 }
 .cards{
     width: 11vw;
