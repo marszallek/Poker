@@ -10,14 +10,14 @@ html{
 h2{
     text-align: center;
     font-size: 4vw;
-    margin: 3vw;
+    margin: 2vw;
 }
 
 .flexi{
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    margin: 4vw;
+    margin: 3vw;
 }
 .cards{
     width: 11vw;
@@ -26,14 +26,15 @@ h2{
 
 #whatsOnHand{
     text-align: center;
-    color: rgb(144, 115, 115);
+    color: rgb(82, 20, 20);
     font-size: 4vw;
 }
 
 button{
-    height: 4vw;
-    width: 8vw;
+    height: 3vw;
+    width: 6vw;
+    font-size: 2vw;
 }
-#play{
+.play{
    text-align: center;
 }

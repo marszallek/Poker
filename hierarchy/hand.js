@@ -5,11 +5,12 @@ const hand = () => {
        //flush()
        straight();
 };
-const tillGet = (iWant) => {// for testing invoke when needed
-    let word = document.querySelector('#whatsOnHand').innerHTML
-    if(word === iWant){
-        word = "ok"
-    }else random();
-    check();
-    hand();
+const tillGet = (iWant) => {// for testing invokes when needed
+        random();
+        check();
+        hand();
+    let word = document.querySelector('#whatsOnHand').textContent
+    if(word != iWant){
+        tillGet(iWant)
+    } 
 };

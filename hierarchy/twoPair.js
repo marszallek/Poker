@@ -752,7 +752,7 @@ const twoPair = () => {
         ((one > 8 && one < 13) && (four > 8 && four < 13) && (two > 4 && two < 9) && (three > 4 && three < 9)) ||
         //(two and four) and (three and five)
         ((two > 8 && two < 13) && (four > 8 && four < 13) && (three > 4 && three < 9) && (five > 4 && five < 9))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Jacks and 9's
         //(one and two) and (three and four)
         ((one > 8 && one < 13) && (two > 8 && two < 13) && (three > 0 && three < 5) && (four > 0 && four < 5)) ||
