@@ -83,6 +83,9 @@ const straight = () => {
         //five one two four three
         ((five > 0 && five < 5) && (one > 4 && one < 9) && (two > 8 && two < 13) && (four > 12 && four < 17) &&
         (three > 16 && three < 21)) ||
+        //three five two one four
+        ((three > 0 && three < 5) && (five > 4 && five < 9) && (two > 8 && two < 13) && (one > 12 && one < 17) &&
+        (four > 16 && four < 21)) ||
         //one two three four five big straits the same amount of money
         ((one > 20 && one < 25) && (two > 4 && two < 9) && (three > 8 && three < 13) && (four > 12 && four < 17) &&
         (five > 16 && five < 21)) ||
@@ -166,7 +169,10 @@ const straight = () => {
         (three > 16 && three < 21)) ||
         //five one two four three
         ((five > 20 && five < 25) && (one > 4 && one < 9) && (two > 8 && two < 13) && (four > 12 && four < 17) &&
-        (three > 16 && three < 21))){
+        (three > 16 && three < 21)) ||
+        //three five two one four
+        ((three > 20 && three < 25) && (five > 4 && five < 9) && (two > 8 && two < 13) && (one > 12 && one < 17) &&
+        (four > 16 && four < 21))){
         document.getElementById('whatsOnHand').textContent = 'Straight';
     }else threeOfAKind();
 }

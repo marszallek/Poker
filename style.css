@@ -31,9 +31,10 @@ h2{
 }
 
 button{
+    border-radius: 1vw;
     height: 3vw;
     width: 6vw;
-    font-size: 2vw;
+    font-size: 1vw;
 }
 .play{
    text-align: center;
