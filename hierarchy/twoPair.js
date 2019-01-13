@@ -56,7 +56,7 @@ const twoPair = () => {
         ((one > 20 && one < 25) && (four > 20 && four < 25) && (two > 16 && two < 21) && (three > 16 && three < 21)) ||
         //(two and four) and (three and five)
         ((two > 20 && two < 25) && (four > 20 && four < 25) && (three > 16 && three < 21) && (five > 16 && five < 21))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Aces and Queens
         //(one and two) and (three and four)
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 12 && three < 17) && (four > 12 && four < 17)) ||
@@ -114,7 +114,7 @@ const twoPair = () => {
         ((one > 20 && one < 25) && (five > 20 && five < 25) && (two > 12 && two < 17) && (four > 12 && four < 17)) ||
         //(two and four) and (three and five)
         ((two > 20 && two < 25) && (four > 20 && four < 25) && (three > 12 && three < 17) && (five > 12 && five < 17))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Aces and Jacks
         //(one and two) and (three and four)
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 8 && three < 13) && (four > 8 && four < 13)) ||
@@ -172,7 +172,7 @@ const twoPair = () => {
         ((one > 20 && one < 25) && (four > 20 && four < 25) && (two > 8 && two < 13) && (three > 8 && three < 13)) ||
         //(two and four) and (three and five)
         ((two > 20 && two < 25) && (four > 20 && four < 25) && (three > 8 && three < 13) && (five > 8 && five < 13))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Aces and 10's
         //(one and two) and (three and four)
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 4 && three < 9) && (four > 4 && four < 9)) ||
@@ -230,7 +230,7 @@ const twoPair = () => {
         ((one > 20 && one < 25) && (four > 20 && four < 25) && (two > 4 && two < 9) && (three > 4 && three < 9)) ||
         //(two and four) and (three and five)
         ((two > 20 && two < 25) && (four > 20 && four < 25) && (three > 4 && three < 9) && (five > 4 && five < 9))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Aces and 9's
         //(one and two) and (three and four)
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 0 && three < 5) && (four > 0 && four < 5)) ||
@@ -288,7 +288,7 @@ const twoPair = () => {
         ((one > 20 && one < 25) && (four > 20 && four < 25) && (two > 0 && two < 5) && (three > 0 && three < 5)) ||
         //(two and four) and (three and five)
         ((two > 20 && two < 25) && (four > 20 && four < 25) && (three > 0 && three < 5) && (five > 0 && five < 5))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Kings and Queens
         //(one and two) and (three and four)
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 12 && three < 17) && (four > 12 && four < 17)) ||
@@ -346,7 +346,7 @@ const twoPair = () => {
         ((one > 16 && one < 21) && (four > 16 && four < 21) && (two > 12 && two < 17) && (three > 12 && three < 17)) ||
         //(two and four) and (three and five)
         ((two > 16 && two < 21) && (four > 16 && four < 21) && (three > 12 && three < 17) && (five > 12 && five < 17))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Kings and Jacks
         //(one and two) and (three and four)
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 8 && three < 13) && (four > 8 && four < 13)) ||
@@ -404,7 +404,7 @@ const twoPair = () => {
         ((one > 16 && one < 21) && (four > 16 && four < 21) && (two > 8 && two < 13) && (three > 8 && three < 13)) ||
         //(two and four) and (three and five)
         ((two > 16 && two < 21) && (four > 16 && four < 21) && (three > 8 && three < 13) && (five > 8 && five < 13))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Kings and 10's
         //(one and two) and (three and four)
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 4 && three < 9) && (four > 4 && four < 9)) ||
@@ -462,7 +462,7 @@ const twoPair = () => {
         ((one > 16 && one < 21) && (four > 16 && four < 21) && (two > 4 && two < 9) && (three > 4 && three < 9)) ||
         //(two and four) and (three and five)
         ((two > 16 && two < 21) && (four > 16 && four < 21) && (three > 4 && three < 9) && (five > 4 && five < 9))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Kings and 9's
         //(one and two) and (three and four)
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 0 && three < 5) && (four > 0 && four < 5)) ||
@@ -520,7 +520,7 @@ const twoPair = () => {
         ((one > 16 && one < 21) && (four > 16 && four < 21) && (two > 0 && two < 5) && (three > 0 && three < 5)) ||
         //(two and four) and (three and five)
         ((two > 16 && two < 21) && (four > 16 && four < 21) && (three > 0 && three < 5) && (five > 0 && five < 5))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Quenns and Jacks
         //(one and two) and (three and four)
         ((one > 12 && one < 17) && (two > 12 && two < 17) && (three > 8 && three < 13) && (four > 8 && four < 13)) ||
@@ -578,7 +578,7 @@ const twoPair = () => {
         ((one > 12 && one < 17) && (four > 12 && four < 17) && (two > 8 && two < 13) && (three > 8 && three < 13)) ||
         //(two and four) and (three and five)
         ((two > 12 && two < 17) && (four > 12 && four < 17) && (three > 8 && three < 13) && (five > 8 && five < 13))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Quenns and 10's
         //(one and two) and (three and four)
         ((one > 12 && one < 17) && (two > 12 && two < 17) && (three > 4 && three < 9) && (four > 4 && four < 9)) ||
@@ -636,7 +636,7 @@ const twoPair = () => {
         ((one > 12 && one < 17) && (four > 12 && four < 17) && (two > 4 && two < 9) && (three > 4 && three < 9)) ||
         //(two and four) and (three and five)
         ((two > 12 && two < 17) && (four > 12 && four < 17) && (three > 4 && three < 9) && (five > 4 && five < 9))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Quenns and 9's
         //(one and two) and (three and four)
         ((one > 12 && one < 17) && (two > 12 && two < 17) && (three > 0 && three < 5) && (four > 0 && four < 5)) ||
@@ -694,7 +694,7 @@ const twoPair = () => {
         ((one > 12 && one < 17) && (four > 12 && four < 17) && (two > 0 && two < 5) && (three > 0 && three < 5)) ||
         //(two and four) and (three and five)
         ((two > 12 && two < 17) && (four > 12 && four < 17) && (three > 0 && three < 5) && (five > 0 && five < 5))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs Jacks and 10's
         //(one and two) and (three and four)
         ((one > 8 && one < 13) && (two > 8 && two < 13) && (three > 4 && three < 9) && (four > 4 && four < 9)) ||
@@ -810,7 +810,7 @@ const twoPair = () => {
         ((one > 8 && one < 13) && (four > 8 && four < 13) && (two > 0 && two < 5) && (three > 0 && three < 5)) ||
         //(two and four) and (three and five)
         ((two > 8 && two < 13) && (four > 8 && four < 13) && (three > 0 && three < 5) && (five > 0 && five < 5))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else if(//Two Pairs 10's and 9's
         //(one and two) and (three and four)
         ((one > 4 && one < 9) && (two > 4 && two < 9) && (three > 0 && three < 5) && (four > 0 && four < 5)) ||
@@ -868,6 +868,6 @@ const twoPair = () => {
         ((one > 4 && one < 9) && (four > 4 && four < 9) && (two > 0 && two < 5) && (three > 0 && three < 5)) ||
         //(two and four) and (three and five)
         ((two > 4 && two < 9) && (four > 4 && four < 9) && (three > 0 && three < 5) && (five > 0 && five < 5))){
-        document.getElementById('whatsOnHand').innerHTML = '2 Pairs';
+        document.getElementById('whatsOnHand').textContent = '2 Pairs';
     }else pair();
 };

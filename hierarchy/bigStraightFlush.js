@@ -238,7 +238,7 @@ const straightFlushBig = () => {
     (five === 24 && two === 8 && one === 12 && three === 16 && four === 20) ||
     //five two one four three
     (five === 24 && two === 8 && one === 12 && four === 16 && three === 20) ||
-    //StraightFlush Diamonds 
+    //StraightFlush Diamonds
     //one two three four five
     (one === 23 && two === 7 && three === 11 && four === 15 && five === 19) ||
     //two three four five one

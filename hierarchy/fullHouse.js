@@ -1,36 +1,36 @@
-const fullHouse= () => {
-    if(//triple of Aces and Kings
+const fullHouse = () => {
+    if(//Full House of Aces and Kings
         //one and two and three four five
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 20 && three < 25) &&
-        (four > 16 && four < 16) && (five > 16 && five < 16)) ||
+        (four > 16 && four < 21) && (five > 16 && five < 21)) ||
         //one and two and four three five
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (four > 20 && four < 25) &&
-        (three > 16 && three < 16) && (five > 16 && five < 16)) ||
+        (three > 16 && three < 21) && (five > 16 && five < 21)) ||
         //one and two and five three four
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (five > 20 && five < 25) &&
-        (three > 16 && three < 16) && (four > 16 && four < 16)) ||
+        (three > 16 && three < 21) && (four > 16 && four < 21)) ||
         //one and three and four two five
         ((one > 20 && one < 25) && (three > 20 && three < 25) && (four > 20 && four < 25) &&
-        (two > 16 && two < 16) && (five > 16 && five < 16)) ||
+        (two > 16 && two < 21) && (five > 16 && five < 21)) ||
         //one and three and two four
         ((one > 20 && one < 25) && (three > 20 && three < 25) && (five > 20 && five < 25) &&
-        (two > 16 && two < 16) && (four > 16 && four < 16)) ||
+        (two > 16 && two < 21) && (four > 16 && four < 21)) ||
         //one and four and five two three
         ((one > 20 && one < 25) && (four > 20 && four < 25) && (five > 20 && five < 25) &&
-        (two > 16 && two < 16) && (three > 16 && three < 16)) ||
+        (two > 16 && two < 21) && (three > 16 && three < 21)) ||
         //two and three and four one five
         ((two > 20 && two < 25) && (three > 20 && three < 25) && (four > 20 && four < 25) &&
-        (one > 16 && one < 16) && (five > 16 && five < 16)) ||
+        (one > 16 && one < 21) && (five > 16 && five < 21)) ||
         //two and three and five one four
         ((two > 20 && two < 25) && (three > 20 && three < 25) && (five > 20 && five < 25) &&
-        (one > 16 && one < 16) && (four > 16 && four < 16)) ||
+        (one > 16 && one < 21) && (four > 16 && four < 21)) ||
         //two and four and five one three
         ((two > 20 && two < 25) && (four > 20 && four < 25) && (five > 20 && five < 25) &&
-        (one > 16 && one < 16) && (three > 16 && three < 16)) ||
+        (one > 16 && one < 21) && (three > 16 && three < 21)) ||
         //three and four and five one two
         ((three > 20 && three < 25) && (four > 20 && four < 25) && (five > 20 && five < 25) &&
-        (one > 16 && one < 16) && (two > 16 && two < 16)) ||
-        //triple of Aces and Queens
+        (one > 16 && one < 21) && (two > 16 && two < 21)) ||
+        //Full House of Aces and Queens
         //one and two and three four five
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 20 && three < 25) &&
         (four > 12 && four < 17) && (five > 12 && five < 17)) ||
@@ -61,7 +61,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 20 && three < 25) && (four > 20 && four < 25) && (five > 20 && five < 25) &&
         (one > 12 && one < 17) && (two > 12 && two < 17)) ||
-        //triple of Aces and Jacks
+        //Full House of Aces and Jacks
         //one and two and three four five
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 20 && three < 25) &&
         (four > 8 && four < 13) && (five > 8 && five < 13)) ||
@@ -92,7 +92,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 20 && three < 25) && (four > 20 && four < 25) && (five > 20 && five < 25) &&
         (one > 8 && one < 13) && (two > 8 && two < 13)) ||
-        //triple of Aces and 10's
+        //Full House of Aces and 10's
         //one and two and three four five
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 20 && three < 25) &&
         (four > 4 && four < 9) && (five > 4 && five < 9)) ||
@@ -123,7 +123,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 20 && three < 25) && (four > 20 && four < 25) && (five > 20 && five < 25) &&
         (one > 4 && one < 9) && (two > 4 && two < 9)) ||
-        //triple of Aces and 10's
+        //Full House of Aces and 10's
         //one and two and three four five
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 20 && three < 25) &&
         (four > 0 && four < 5) && (five > 0 && five < 5)) ||
@@ -154,7 +154,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 20 && three < 25) && (four > 20 && four < 25) && (five > 20 && five < 25) &&
         (one > 0 && one < 5) && (two > 0 && two < 5)) ||
-        //triple of Kings and Aces
+        //Full House of Kings and Aces
         //one and two and three four five
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 16 && three < 21) &&
         (four > 20 && four < 25) && (five > 20 && five < 25)) ||
@@ -185,7 +185,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 16 && three < 21) && (four > 16 && four < 21) && (five > 16 && five < 21) &&
         (one > 20 && one < 25) && (two > 20 && two < 25)) ||
-        //triple of Kings and Queens
+        //Full House of Kings and Queens
         //one and two and three four five
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 16 && three < 21) &&
         (four > 12 && four < 17) && (five > 12 && five < 17)) ||
@@ -216,7 +216,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 16 && three < 21) && (four > 16 && four < 21) && (five > 16 && five < 21) &&
         (one > 12 && one < 17) && (two > 12 && two < 17)) || 
-        //triple of Kings and Jacks
+        //Full House of Kings and Jacks
         //one and two and three four five
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 16 && three < 21) &&
         (four > 8 && four < 13) && (five > 8 && five < 13)) ||
@@ -247,7 +247,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 16 && three < 21) && (four > 16 && four < 21) && (five > 16 && five < 21) &&
         (one > 8 && one < 13) && (two > 8 && two < 13)) ||
-        //triple of Kings and 10's
+        //Full House of Kings and 10's
         //one and two and three four five
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 16 && three < 21) &&
         (four > 4 && four < 9) && (five > 4 && five < 9)) ||
@@ -278,7 +278,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 16 && three < 21) && (four > 16 && four < 21) && (five > 16 && five < 21) &&
         (one > 4 && one < 9) && (two > 4 && two < 9)) ||
-        //triple of Kings and 9's
+        //Full House of Kings and 9's
         //one and two and three four five
         ((one > 16 && one < 21) && (two > 16 && two < 21) && (three > 16 && three < 21) &&
         (four > 0 && four < 5) && (five > 0 && five < 5)) ||
@@ -309,7 +309,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 16 && three < 21) && (four > 16 && four < 21) && (five > 16 && five < 21) &&
         (one > 0 && one < 5) && (two > 0 && two < 5)) ||
-        //triple of Quenns and Aces
+        //Full House of Quenns and Aces
         //one and two and three four five
         ((one > 12 && one < 17) && (two > 12 && two < 17) && (three > 12 && three < 17) &&
         (four > 20 && four < 25) && (five > 20 && five < 25)) ||
@@ -340,7 +340,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 12 && three < 17) && (four > 12 && four < 17) && (five > 12 && five < 17) &&
         (one > 20 && one < 25) && (two > 20 && two < 25)) ||
-        //triple of Quenns and Kings
+        //Full House of Quenns and Kings
         //one and two and three four five
         ((one > 12 && one < 17) && (two > 12 && two < 17) && (three > 12 && three < 17) &&
         (four > 16 && four < 21) && (five > 16 && five < 21)) ||
@@ -371,7 +371,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 12 && three < 17) && (four > 12 && four < 17) && (five > 12 && five < 17) &&
         (one > 16 && one < 21) && (two > 16 && two < 21)) ||
-        //triple of Quenns and Jacks
+        //Full House of Quenns and Jacks
         //one and two and three four five
         ((one > 12 && one < 17) && (two > 12 && two < 17) && (three > 12 && three < 17) &&
         (four > 8 && four < 13) && (five > 8 && five < 13)) ||
@@ -402,7 +402,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 12 && three < 17) && (four > 12 && four < 17) && (five > 12 && five < 17) &&
         (one > 8 && one < 13) && (two > 8 && two < 13)) ||
-        //triple of Quenns and 10's
+        //Full House of Quenns and 10's
         //one and two and three four five
         ((one > 12 && one < 17) && (two > 12 && two < 17) && (three > 12 && three < 17) &&
         (four > 4 && four < 9) && (five > 4 && five < 9)) ||
@@ -433,7 +433,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 12 && three < 17) && (four > 12 && four < 17) && (five > 12 && five < 17) &&
         (one > 4 && one < 9) && (two > 4 && two < 9)) ||
-        //triple of Quenns and 5's
+        //Full House of Quenns and 9's
         //one and two and three four five
         ((one > 12 && one < 17) && (two > 12 && two < 17) && (three > 12 && three < 17) &&
         (four > 0 && four < 5) && (five > 0 && five < 5)) ||
@@ -464,7 +464,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 12 && three < 17) && (four > 12 && four < 17) && (five > 12 && five < 17) &&
         (one > 0 && one < 5) && (two > 0 && two < 5)) ||
-        //triple of Jacks and Aces
+        //Full House of Jacks and Aces
         //one and two and three four five
         ((one > 8 && one < 13) && (two > 8 && two < 13) && (three > 8 && three < 13) &&
         (four > 20 && four < 25) && (five > 20 && five < 25)) ||
@@ -495,7 +495,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 8 && three < 13) && (four > 8 && four < 13) && (five > 8 && five < 13) &&
         (one > 20 && one < 25) && (two > 20 && two < 25)) ||
-        //triple of Jacks and Kings
+        //Full House of Jacks and Kings
         //one and two and three four five
         ((one > 8 && one < 13) && (two > 8 && two < 13) && (three > 8 && three < 13) &&
         (four > 16 && four < 21) && (five > 16 && five < 21)) ||
@@ -526,7 +526,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 8 && three < 13) && (four > 8 && four < 13) && (five > 8 && five < 13) &&
         (one > 16 && one < 21) && (two > 16 && two < 21)) || 
-        //triple of Jacks and Quenns
+        //Full House of Jacks and Quenns
         //one and two and three four five
         ((one > 8 && one < 13) && (two > 8 && two < 13) && (three > 8 && three < 13) &&
         (four > 12 && four < 17) && (five > 12 && five < 17)) ||
@@ -557,7 +557,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 8 && three < 13) && (four > 8 && four < 13) && (five > 8 && five < 13) &&
         (one > 12 && one < 17) && (two > 12 && two < 17)) ||
-        //triple of Jacks and 10's
+        //Full House of Jacks and 10's
         //one and two and three four five
         ((one > 8 && one < 13) && (two > 8 && two < 13) && (three > 8 && three < 13) &&
         (four > 4 && four < 9) && (five > 4 && five < 9)) ||
@@ -588,7 +588,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 8 && three < 13) && (four > 8 && four < 13) && (five > 8 && five < 13) &&
         (one > 4 && one < 9) && (two > 4 && two < 9)) ||
-        //triple of Jacks and 9's
+        //Full House of Jacks and 9's
         //one and two and three four five
         ((one > 8 && one < 13) && (two > 8 && two < 13) && (three > 8 && three < 13) &&
         (four > 0 && four < 5) && (five > 0 && five < 5)) ||
@@ -619,7 +619,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 8 && three < 13) && (four > 8 && four < 13) && (five > 8 && five < 13) &&
         (one > 0 && one < 5) && (two > 0 && two < 5)) || 
-        //triple of 10's and Aces's
+        //Full House of 10's and Aces's
         //one and two and three four five
         ((one > 4 && one < 9) && (two > 4 && two < 9) && (three > 4 && three < 9) &&
         (four > 20 && four < 25) && (five > 20 && five < 25)) ||
@@ -650,7 +650,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 4 && three < 9) && (four > 4 && four < 9) && (five > 4 && five < 9) &&
         (one > 20 && one < 25) && (two > 20 && two < 25)) ||
-        //triple of 10's and Kings
+        //Full House of 10's and Kings
         //one and two and three four five
         ((one > 4 && one < 9) && (two > 4 && two < 9) && (three > 4 && three < 9) &&
         (four > 16 && four < 21) && (five > 16 && five < 21)) ||
@@ -681,7 +681,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 4 && three < 9) && (four > 4 && four < 9) && (five > 4 && five < 9) &&
         (one > 16 && one < 21) && (two > 16 && two < 21)) ||
-        //triple of 10's and Queens
+        //Full House of 10's and Queens
         //one and two and three four five
         ((one > 4 && one < 9) && (two > 4 && two < 9) && (three > 4 && three < 9) &&
         (four > 12 && four < 17) && (five > 12 && five < 17)) ||
@@ -712,7 +712,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 4 && three < 9) && (four > 4 && four < 9) && (five > 4 && five < 9) &&
         (one > 12 && one < 17) && (two > 12 && two < 17)) ||
-        //triple of 10's and Jacks
+        //Full House of 10's and Jacks
         //one and two and three four five
         ((one > 4 && one < 9) && (two > 4 && two < 9) && (three > 4 && three < 9) &&
         (four > 8 && four < 13) && (five > 8 && five < 13)) ||
@@ -743,7 +743,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 4 && three < 9) && (four > 4 && four < 9) && (five > 4 && five < 9) &&
         (one > 8 && one < 13) && (two > 8 && two < 13)) ||
-        //triple of 10's and 9's
+        //Full House of 10's and 9's
         //one and two and three four five
         ((one > 4 && one < 9) && (two > 4 && two < 9) && (three > 4 && three < 9) &&
         (four > 0 && four < 5) && (five > 0 && five < 5)) ||
@@ -774,7 +774,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 4 && three < 9) && (four > 4 && four < 9) && (five > 4 && five < 9) &&
         (one > 0 && one < 5) && (two > 0 && two < 5)) ||
-        //triple of 5's and Aces
+        //Full House of 9's and Aces
         //one and two and three four five
         ((one > 0 && one < 5) && (two > 0 && two < 5) && (three > 0 && three < 5) &&
         (four > 20 && four < 25) && (five > 20 && five < 25)) ||
@@ -805,7 +805,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 0 && three < 5) && (four > 0 && four < 5) && (five > 0 && five < 5) &&
         (one > 20 && one < 25) && (two > 20 && two < 25)) ||
-        //triple of 5's and Kings
+        //Full House of 9's and Kings
         //one and two and three four five
         ((one > 0 && one < 5) && (two > 0 && two < 5) && (three > 0 && three < 5) &&
         (four > 16 && four < 21) && (five > 16 && five < 21)) ||
@@ -836,7 +836,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 0 && three < 5) && (four > 0 && four < 5) && (five > 0 && five < 5) &&
         (one > 16 && one < 21) && (two > 16 && two < 21)) || 
-        //triple of 5's and Queens
+        //Full House of 9's and Queens
         //one and two and three four five
         ((one > 0 && one < 5) && (two > 0 && two < 5) && (three > 0 && three < 5) &&
         (four > 12 && four < 17) && (five > 12 && five < 17)) ||
@@ -867,7 +867,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 0 && three < 5) && (four > 0 && four < 5) && (five > 0 && five < 5) &&
         (one > 12 && one < 17) && (two > 12 && two < 17)) ||
-        //triple of 5's and Jacks
+        //Full House of 9's and Jacks
         //one and two and three four five
         ((one > 0 && one < 5) && (two > 0 && two < 5) && (three > 0 && three < 5) &&
         (four > 8 && four < 13) && (five > 8 && five < 13)) ||
@@ -898,7 +898,7 @@ const fullHouse= () => {
         //three and four and five one two
         ((three > 0 && three < 5) && (four > 0 && four < 5) && (five > 0 && five < 5) &&
         (one > 8 && one < 13) && (two > 8 && two < 13)) ||
-        //triple of 5's and 10's
+        //Full House of 9's and 10's
         //one and two and three four five
         ((one > 0 && one < 5) && (two > 0 && two < 5) && (three > 0 && three < 5) &&
         (four > 4 && four < 9) && (five > 4 && five < 9)) ||

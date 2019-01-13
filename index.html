@@ -10,7 +10,7 @@
     <body>
         <div><h2>Classic poker</h2></div>
         <div class="play"><button onclick="random(); check(); hand();">PLAY</button></div>
-        <div class="play"><button onclick="tillGet('Full House');">FIND</button></div><!--Heliping Me Find Missing Sets of Cards-->
+        <div class="play"><button onclick="tillGet('Three of a Kind');">FIND</button></div><!--Heliping Me Find Missing Sets of Cards-->
         <div id="pok1"></div>
         <ul class="flexi">
             <li><img class="cards" id="first" src="cards/default.png"></li>
@@ -22,14 +22,14 @@
         <div id="whatsOnHand"></div>
         <script src="pok.js" type="text/javascript"></script>
         <script src="hierarchy/hand.js" type="text/javascript"></script>
-        <script src="hierarchy/straightFlushBig.js" type="text/javascript"></script>
-        <script src="hierarchy/straightFlush.js" type="text/javascript"></script>
-        <script src="hierarchy/flush.js" type="text/javascript"></script>
-        <script src="hierarchy/fourOfAKind.js" type="text/javascript"></script>
-        <script src="hierarchy/fullHouse.js" type="text/javascript"></script>
-        <script src="hierarchy/straight.js" type="text/javascript"></script>
-        <script src="hierarchy/threeOfAKind.js" type="text/javascript"></script>
-        <script src="hierarchy/twoPair.js" type="text/javascript"></script>
-        <script src="hierarchy/pair.js" type="text/javascript"></script>
+        <script src="hierarchy/bigStraightFlushFilterIncludes.js" type="text/javascript"></script>
+        <script src="hierarchy/smallStraightFlushFilterIncludes.js" type="text/javascript"></script>
+        <script src="hierarchy/flushFilterIncludes.js" type="text/javascript"></script>
+        <script src="hierarchy/fourOfAKindFilterIncludes.js" type="text/javascript"></script>
+        <script src="hierarchy/fullHouseFilterIncludes.js" type="text/javascript"></script>
+        <script src="hierarchy/straightFilterInclude.js" type="text/javascript"></script>
+        <script src="hierarchy/threeOfAKindFilterIncludes.js" type="text/javascript"></script>
+        <script src="hierarchy/twoPairFilterIncludes.js" type="text/javascript"></script>
+        <script src="hierarchy/pairFilterIncludes.js" type="text/javascript"></script>
     </body>
 </html>

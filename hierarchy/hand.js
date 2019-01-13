@@ -1,5 +1,5 @@
 const hand = () => {
-       straightFlushBig();
+    straightFlushBig();
 };
 const tillGet = (iWant) => {// for testing invokes when needed
         random();
