@@ -1,9 +1,5 @@
 const hand = () => {
-       //straightFlush();
-       //fourOfAKind();
-       //fullHouse()
-       //flush()
-       straight();
+       straightFlushBig();
 };
 const tillGet = (iWant) => {// for testing invokes when needed
         random();
