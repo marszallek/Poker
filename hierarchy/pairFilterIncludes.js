@@ -25,6 +25,6 @@ const pair = () => {
     //Aces
     if((aces.length === 2) || (kings.length === 2) || (queens.length === 2) ||
     (jacks.length === 2) || (tenns.length === 2) || (nines.length === 2)){
-    document.getElementById('whatsOnHand').textContent = 'Pairs';
+    document.getElementById('whatsOnHand').textContent = 'Pair';
     }else document.getElementById('whatsOnHand').textContent = 'Try Again';
 }; 

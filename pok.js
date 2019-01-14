@@ -1,22 +1,21 @@
-var one;
-var two;
-var three;
-var four;
-var five;
-function random(){
+let one;
+let two;
+let three;
+let four;
+let five;
+const random = () => {
     one = Math.floor(Math.random() * 24 + 1);
     two = Math.floor(Math.random() * 24 + 1);
     three = Math.floor(Math.random() * 24 + 1);
     four = Math.floor(Math.random() * 24 + 1);
     five = Math.floor(Math.random() * 24 + 1);
  
-    if (one === two || one === three || one === four || one === five ||
-        two === three || two === four || two === five
-        || three === four || three === five || four === five){
+    if (one === two || one === three || one === four || one === five || two === three ||
+    two === four || two === five || three === four || three === five || four === five){
         random()
     };
 };
-function check(){
+const check = () => {
     //first card on hand
     if ( one === 1){
         document.getElementById('first').src = 'cards/1.png';
@@ -268,3 +267,25 @@ function check(){
         document.getElementById('fifth').src = 'cards/24.png';
     };
 };
+
+const hand = () => {
+    straightFlushBig();
+};
+const tillGet = (iWant) => {// for testing invokes when needed
+        random();
+        check();
+        hand();
+    let word = document.querySelector('#whatsOnHand').textContent
+    if(word != iWant){
+        tillGet(iWant)
+    } 
+};
+
+let start = document.getElementById('start');
+let find = document.getElementById('find');
+
+start.onclick = random;
+start.addEventListener('click', check);
+start.addEventListener('click', hand);
+
+find.addEventListener('click', () => tillGet('2 Pairs'), false);
