@@ -15,13 +15,13 @@ h2{
 
 .flexi{
     display: flex;
-    justify-content: space-evenly;
     list-style-type: none;
-    margin: 3vw;
+    justify-content: center;
 }
 .cards{
-    width: 11vw;
-    height: 17vw;
+    width: 9vw;
+    height: 15vw;
+    padding: 2vw;
 }
 
 #whatsOnHand{
