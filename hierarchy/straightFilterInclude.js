@@ -1,8 +1,8 @@
 const straight = () => {
     let fourOfAces = [21, 22, 21, 24];
-    let fourOfKings = [17, 18 ,19, 20];
+    let fourOfKings = [17, 18, 19, 20];
     let fourOfQueens = [13, 14, 15, 16];
-    let fourOfJacks = [9, 10 ,11, 12];
+    let fourOfJacks = [9, 10, 11, 12];
     let fourOfTens = [5, 6, 7, 8];
     let fourOfNines = [1, 2, 3, 4];
 
@@ -22,10 +22,10 @@ const straight = () => {
     let tenns = allTenns(fourOfTens, whatsOnHand);
     let nines = allNines(fourOfNines, whatsOnHand);
 
-    if(((aces.length === 1) && (kings.length === 1) && (queens.length === 1) &&
-    (jacks.length === 1) && (tenns.length === 1)) ||
-    ((kings.length === 1) && (queens.length === 1) &&
-    (jacks.length === 1) && (tenns.length === 1) && (nines.length === 1))){   
-    document.getElementById('whatsOnHand').textContent = 'Straight';
-    }else threeOfAKind();
+    if (((aces.length === 1) && (kings.length === 1) && (queens.length === 1) &&
+            (jacks.length === 1) && (tenns.length === 1)) ||
+        ((kings.length === 1) && (queens.length === 1) &&
+            (jacks.length === 1) && (tenns.length === 1) && (nines.length === 1))) {
+        document.getElementById('whatsOnHand').textContent = 'Straight';
+    } else threeOfAKind();
 };

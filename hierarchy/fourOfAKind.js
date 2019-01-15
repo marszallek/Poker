@@ -1,5 +1,5 @@
-const fourOfAKind =() =>{
-    if(//Four Of A Kind Aces
+const fourOfAKind = () => {
+    if ( //Four Of A Kind Aces
         //one and two and three and four
         ((one > 20 && one < 25) && (two > 20 && two < 25) && (three > 20 && three < 25) && (four > 20 && four < 25)) ||
         //one and two and three and five
@@ -64,7 +64,7 @@ const fourOfAKind =() =>{
         //one and three and four and five
         ((one > 0 && one < 5) && (three > 0 && three < 5) && (four > 0 && four < 5) && (five > 0 && five < 5)) ||
         //two and three and four and five
-        ((one > 0 && one < 5) && (three > 0 && three < 5) && (four > 0 && four < 5) && (five > 0 && five < 5))){
+        ((one > 0 && one < 5) && (three > 0 && three < 5) && (four > 0 && four < 5) && (five > 0 && five < 5))) {
         document.getElementById('whatsOnHand').textContent = 'Four Of A Kind';
-        }else fullHouse();
+    } else fullHouse();
 };

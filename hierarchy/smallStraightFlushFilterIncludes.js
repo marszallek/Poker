@@ -11,13 +11,13 @@ const straightFlushSmall = () => {
     let allClubs = (y, z) => y.filter((x) => z.includes(x));
     let allSpades = (y, z) => y.filter((x) => z.includes(x));
 
-    let flushOfHeartsOnHand = allHearts(straightFlushHearts,whatsOnHand);
-    let flushOfDiamondsOnHand = allDiamonds(straightFlushDiamonds,whatsOnHand);
-    let flushOfClubssOnHand = allClubs(straightFlushClubs,whatsOnHand);
-    let flushOfSpadesOnHand = allSpades(straightFlushSpades,whatsOnHand);
+    let flushOfHeartsOnHand = allHearts(straightFlushHearts, whatsOnHand);
+    let flushOfDiamondsOnHand = allDiamonds(straightFlushDiamonds, whatsOnHand);
+    let flushOfClubssOnHand = allClubs(straightFlushClubs, whatsOnHand);
+    let flushOfSpadesOnHand = allSpades(straightFlushSpades, whatsOnHand);
 
-    if((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
-    (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)){
-    document.getElementById('whatsOnHand').textContent = 'Small Straight Flush';
-    }else flush();
+    if ((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
+        (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)) {
+        document.getElementById('whatsOnHand').textContent = 'Small Straight Flush';
+    } else flush();
 };
