@@ -1,8 +1,8 @@
 const threeOfAKind = () => {
     let fourOfAces = [21, 22, 23, 24];
-    let fourOfKings = [17, 18 ,19, 20];
+    let fourOfKings = [17, 18, 19, 20];
     let fourOfQueens = [13, 14, 15, 16];
-    let fourOfJacks = [9, 10 ,11, 12];
+    let fourOfJacks = [9, 10, 11, 12];
     let fourOfTens = [5, 6, 7, 8];
     let fourOfNines = [1, 2, 3, 4];
 
@@ -22,8 +22,8 @@ const threeOfAKind = () => {
     let tenns = allTenns(fourOfTens, whatsOnHand);
     let nines = allNines(fourOfNines, whatsOnHand);
 
-    if((aces.length === 3) || (kings.length === 3) || (queens.length === 3) ||
-    (jacks.length === 3) || (tenns.length === 3) || (nines.length === 3)){   
-    document.getElementById('whatsOnHand').textContent = 'Three of a Kind';
-    }else twoPair();
+    if ((aces.length === 3) || (kings.length === 3) || (queens.length === 3) ||
+        (jacks.length === 3) || (tenns.length === 3) || (nines.length === 3)) {
+        document.getElementById('whatsOnHand').textContent = 'Three of a Kind';
+    } else twoPair();
 };

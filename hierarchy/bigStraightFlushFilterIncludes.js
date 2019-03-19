@@ -16,8 +16,8 @@ const straightFlushBig = () => {
     let flushOfClubssOnHand = allClubs(straightFlushClubs, whatsOnHand);
     let flushOfSpadesOnHand = allSpades(straightFlushSpades, whatsOnHand);
 
-    if((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
-    (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)){
-    document.getElementById('whatsOnHand').textContent = 'Big Straight Flush';
-    }else straightFlushSmall();
+    if ((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
+        (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)) {
+        document.getElementById('whatsOnHand').textContent = 'Big Straight Flush';
+    } else straightFlushSmall();
 };
