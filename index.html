@@ -1,33 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CLASSIC POKER</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer="defer"></script>
+    <script src="./app.js" defer="defer"></script>
+    <title>CLASSIC POKER</title>
+</head>
+
+<body>
+    <content id="app">
         <h2>Classic poker</h2>
-        <div id="start" class="play"><button>PLAY</button></div>
-        <div id="find" class="play"><button>FIND</button></div><!--Heliping Me Find Missing Sets of Cards-->
         <ul class="flexi">
-            <li><img class="cards" id="first" src="cards/default.png"></li>
-            <li><img class="cards" id="second" src="cards/default.png"></li>
-            <li><img class="cards" id="third" src="cards/default.png"></li>
-            <li><img class="cards" id="fourth" src="cards/default.png"></li>
-            <li><img class="cards" id="fifth" src="cards/default.png"></li>
-        </ul> 
-        <div id="whatsOnHand"></div>
-        <script src="pok.js" type="text/javascript"></script>
-        <script src="hierarchy/bigStraightFlushFilterIncludes.js" type="text/javascript"></script>
-        <script src="hierarchy/smallStraightFlushFilterIncludes.js" type="text/javascript"></script>
-        <script src="hierarchy/flushFilterIncludes.js" type="text/javascript"></script>
-        <script src="hierarchy/fourOfAKindFilterIncludes.js" type="text/javascript"></script>
-        <script src="hierarchy/fullHouseFilterIncludes.js" type="text/javascript"></script>
-        <script src="hierarchy/straightFilterInclude.js" type="text/javascript"></script>
-        <script src="hierarchy/threeOfAKindFilterIncludes.js" type="text/javascript"></script>
-        <script src="hierarchy/twoPairFilterIncludes.js" type="text/javascript"></script>
-        <script src="hierarchy/pairFilterIncludes.js" type="text/javascript"></script>
-    </body>
+            <li><img class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected}" @click="selectFirst()"></li>
+            <li><img class="cards" id="second" src="cards/default.png" :class="{toBeChanged : secondSelected}" @click="selectSecond()"></li>
+            <li><img class="cards" id="third" src="cards/default.png" :class="{toBeChanged : thirdSelected}" @click="selectThird()"></li>
+            <li><img class="cards" id="fourth" src="cards/default.png" :class="{toBeChanged : fourthSelected}" @click="selectFourth()"></li>
+            <li><img class="cards" id="fifth" src="cards/default.png" :class="{toBeChanged : fifthSelected}" @click="selectFifth()"></li>
+            <li>
+                <table>
+                    <tr>
+                        <th>BIG STRAIGHT FLUSH</th>
+                        <th>{{ bigStraightFlushValue }}</th>
+                    </tr>
+                    <tr>
+                        <th>SMALL STRAIGHT FLUSH</th>
+                        <th>{{ smalStraightFlushValue }}</th>
+                    </tr>
+                    <tr>
+                        <th>FLUSH</th>
+                        <th>{{ flushValue }}</th>
+                    </tr>
+                    <tr>
+                        <th>FOUR OF THE KIND</th>
+                        <th>{{ fourOfTheKindValue }}</th>
+                    </tr>
+                    <tr>
+                        <th>FULL HOUSE</th>
+                        <th>{{ fullHouseValue }}</th>
+                    </tr>
+                    <tr>
+                        <th>STRAIGHT</th>
+                        <th>{{ straightValue }}</th>
+                    </tr>
+                    <tr>
+                        <th>THREE OF THE KIND</th>
+                        <th>{{ threeOfTheKindValue }}</th>
+                    </tr>
+                    <tr>
+                        <th>TWO PAIRS</th>
+                        <th>{{ twoPairsValue }}</th>
+                    </tr>
+                    <tr>
+                        <th>PAIR</th>
+                        <th>{{ pairValue }}</th>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <div class="flexi">
+            <div class="money">{{ money }}</div>
+            <div class="money">{{ fairBet }}</div>
+            <button @click="betPlusOne()">+1</button>
+            <button @click="betMinusOne()">-1</button>
+            <button @click="betPlusTen()">+10</button>
+            <button @click="betMinusTen()">-10</button>
+            <button @click="betPlusFifty()">+50</button>
+            <button @click="betMinusFifty()">-50</button>
+            <div class="play" @click="start()"><button>PLAY</button></div>
+            <!--Heliping Me To Find Missing Sets of Cards-->
+            <div class="play" @click="tillGet('Flush')"><button>FIND</button></div>
+        </div>
+        <div id="whatsOnHand">{{ score }}</div>
+    </content>
+
+</body>
+
 </html>
