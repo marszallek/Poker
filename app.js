@@ -4,6 +4,60 @@ let three;
 let four;
 let five;
 
+let firstLow = 'cards/1.png';
+let secondLow = 'cards/2.png';
+let thirdLow = 'cards/3.png';
+let fourthLow = 'cards/4.png';
+let fifthLow = 'cards/5.png';
+let sixthLow = 'cards/6.png';
+let seventhLow = 'cards/7.png';
+let eightLow = 'cards/8.png';
+let ninethLow = 'cards/9.png';
+let tenthLow = 'cards/10.png';
+let eleventhLow = 'cards/11.png';
+let twelvethLow = 'cards/12.png';
+
+let firstHigh = 'cards/13.png';
+let secondHigh = 'cards/14.png';
+let thirdHigh = 'cards/15.png';
+let fourthHigh = 'cards/16.png';
+let fifthHigh = 'cards/17.png';
+let sixthHigh = 'cards/18.png';
+let seventhHigh = 'cards/19.png';
+let eightHigh = 'cards/20.png';
+let ninethHigh = 'cards/21.png';
+let tenthHigh = 'cards/22.png';
+let eleventhHigh = 'cards/23.png';
+let twelvethHigh = 'cards/24.png';
+
+let lowCards = [firstLow, secondLow, thirdLow, fourthLow, fifthLow, sixthLow, seventhLow, eightLow, ninethLow, tenthLow, eleventhLow, twelvethLow];
+let fristLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let secondLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let thirdLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let fourthLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let fifthLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let sixthLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let seventhLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let eightLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let ninethLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let tenthLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1)
+let eleventhLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1) 
+let twelvethLowCard = lowCards.splice((Math.floor(Math.random() * lowCards.length)), 1) 
+
+let highCards = [firstHigh, secondHigh, thirdHigh, fourthHigh, fifthHigh, sixthHigh, seventhHigh, eightHigh, ninethHigh, tenthHigh, eleventhHigh, twelvethHigh];
+let fristHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let secondHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let thirdHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let fourthHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let fifthHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let sixthHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let seventhHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let eightHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let ninethHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let tenthHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1)
+let eleventhHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1) 
+let twelvethHighCard = highCards.splice((Math.floor(Math.random() * highCards.length)), 1) 
+
 const app = new Vue({
     el: '#app',
     data: {
@@ -16,7 +70,8 @@ const app = new Vue({
         thirdSelected: false,
         fourthSelected: false,
         fifthSelected: false,
-        secretLevel: 0
+        secretLevel: 0,
+        moneyWon: 0,
     },
     computed: {
         fairBet: function () {
@@ -54,6 +109,27 @@ const app = new Vue({
         },
         pairValue: function () {
             return this.bet
+        },
+        moneyToBeTaken: function() {
+            if(this.score === 'Big Straight Flush'){
+                return this.moneyWon = this.bigStraightFlushValue
+            }else if(this.score === 'Small Straight Flush'){
+                return this.moneyWon = this.smalStraightFlushValue
+            }else if(this.score === 'Flush'){
+                return this.moneyWon = this.flushValue
+            }else if(this.score === 'Four Of The Kind'){
+                return this.moneyWon = this.fourOfTheKindValue
+            }else if(this.score === 'Full House'){
+                return this.moneyWon = this.fullHouseValue
+            }else if(this.score === 'Straight'){
+                return this.moneyWon = this.straightValue
+            }else if(this.score === 'Three of a Kind'){
+                return this.moneyWon = this.threeOfTheKindValue
+            }else if(this.score === '2 Pairs'){
+                return this.moneyWon = this.twoPairsValue
+            }else if(this.score === 'Pair'){
+                return this.moneyWon = this.pairValue
+            }else return this.moneyWon = 0
         },
     },
     methods: {
@@ -766,13 +842,314 @@ const app = new Vue({
             this.whatIsOnHand();
             this.round = 3;
         },
-        takARisk: function() {
-           
-        },
-        nextRound: function() {
+        collectMoney: function() {
+            this.round = 3;
             this.whatIsOnHand()
             this.round = 1;
+            this.moneyWon = 0;
+            this.score = 'Good Luck'
         },
+        takeARisk: function() {
+            this.round = 4;
+            this.secretLevel = 1
+        },
+        lowCard1: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('firstSecret').src = fristLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };      
+        },
+        lowCard2: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('secondSecret').src = secondLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard3: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('thirdSecret').src = thirdLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard4: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('fourthSecret').src = fourthLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard5: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('fifthSecret').src = fifthLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard6: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('sixthSecret').src = sixthLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard7: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('seventhSecret').src = seventhLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard8: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('eightSecret').src = eightLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard9: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('ninethSecret').src = ninethLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard10: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('tenthSecret').src = tenthLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard11: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('eleventhSecret').src = eleventhLowCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        lowCard12: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard < 13){
+                document.getElementById('twelvethSecret').src = twelvethLowCard;
+                this.moneyWon *= 2;
+                alert('You Smash The Bank');
+                this.secretLevel = 0
+            }else if (secretCard > 12){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard1: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('firstSecret').src = fristHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };      
+        },
+        highCard2: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('secondSecret').src = secondHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard3: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('thirdSecret').src = thirdHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard4: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('fourthSecret').src = fourthHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard5: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('fifthSecret').src = fifthHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard6: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('sixthSecret').src = sixthHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard7: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('seventhSecret').src = seventhHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard8: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('eightSecret').src = eightHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard9: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('ninethSecret').src = ninethHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard10: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('tenthSecret').src = tenthHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard11: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('eleventhSecret').src = eleventhHighCard;
+                this.moneyWon *= 2;
+                this.secretLevel ++
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        highCard12: function() {
+            let secretCard = 0;
+            secretCard = Math.floor(Math.random() * 24 + 1);
+            if(secretCard > 12){
+                document.getElementById('twelvethSecret').src = twelvethHighCard;
+                this.moneyWon *= 2;
+                alert('You Smash The Bank');
+                this.secretLevel = 0
+            }else if (secretCard < 13){
+                this.moneyWon = 0;
+                this.secretLevel = 0
+            };
+        },
+        collectMoneyFromRisk: function() {
+            this.money = this.money + this. moneyWon;
+            this.round = 1;
+            this.secretLevel = 0;
+            this.moneyWon = 0;
+            this.score = 'Good Luck'
+        }
         // for testing invoke when needed
         /*tillGet: function (iWant) {
             this.random();

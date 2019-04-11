@@ -24,10 +24,16 @@ h2{
     padding: 2vw;
 }
 
-#whatsOnHand{
+.whatsOnHand{
     text-align: center;
     color: rgb(82, 20, 20);
     font-size: 4vw;
+}
+
+.whatsOnHandValue{
+    text-align: center;
+    color: rgb(82, 20, 20);
+    font-size: 2vw;
 }
 
 button{
@@ -59,3 +65,14 @@ button{
 .highlighted{
     color: red;
 }
+
+.riskyCards{
+    width: 6vw;
+    height: 10vw;
+}
+
+textarea {
+    resize: none;
+    text-align: center;
+    font-size: 4vw;
+ }
