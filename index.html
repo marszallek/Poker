@@ -15,46 +15,46 @@
     <content id="app">
         <h2>Classic poker</h2>
         <ul class="flexi">
-            <li><img class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected, changeRound : !firstRound}" @click="selectFirst()" :disabled="firstRound"></li>
-            <li><img class="cards" id="second" src="cards/default.png" :class="{toBeChanged : secondSelected, changeRound : !firstRound}" @click="selectSecond()"></li>
-            <li><img class="cards" id="third" src="cards/default.png" :class="{toBeChanged : thirdSelected, changeRound : !firstRound}" @click="selectThird()"></li>
-            <li><img class="cards" id="fourth" src="cards/default.png" :class="{toBeChanged : fourthSelected, changeRound : !firstRound}" @click="selectFourth()"></li>
-            <li><img class="cards" id="fifth" src="cards/default.png" :class="{toBeChanged : fifthSelected, changeRound : !firstRound}" @click="selectFifth()"></li>
+            <li><img class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected, targetCard : round === 2}" @click="selectFirst()"></li>
+            <li><img class="cards" id="second" src="cards/default.png" :class="{toBeChanged : secondSelected, targetCard : round === 2}" @click="selectSecond()"></li>
+            <li><img class="cards" id="third" src="cards/default.png" :class="{toBeChanged : thirdSelected, targetCard : round === 2}" @click="selectThird()"></li>
+            <li><img class="cards" id="fourth" src="cards/default.png" :class="{toBeChanged : fourthSelected, targetCard : round === 2}" @click="selectFourth()"></li>
+            <li><img class="cards" id="fifth" src="cards/default.png" :class="{toBeChanged : fifthSelected, targetCard : round === 2}" @click="selectFifth()"></li>
             <li>
                 <table>
-                    <tr>
+                    <tr :class="{ highlighted: score === 'Big Straight Flush' }">
                         <th>BIG STRAIGHT FLUSH</th>
                         <th>{{ bigStraightFlushValue }}</th>
                     </tr>
-                    <tr>
+                    <tr :class="{ highlighted: score === 'Small Straight Flush' }">
                         <th>SMALL STRAIGHT FLUSH</th>
                         <th>{{ smalStraightFlushValue }}</th>
                     </tr>
-                    <tr>
+                    <tr :class="{ highlighted: score === 'Flush' }">
                         <th>FLUSH</th>
                         <th>{{ flushValue }}</th>
                     </tr>
-                    <tr>
+                    <tr :class="{ highlighted: score === 'Four Of The Kind' }">
                         <th>FOUR OF THE KIND</th>
                         <th>{{ fourOfTheKindValue }}</th>
                     </tr>
-                    <tr>
+                    <tr :class="{ highlighted: score === 'Full House' }">
                         <th>FULL HOUSE</th>
                         <th>{{ fullHouseValue }}</th>
                     </tr>
-                    <tr>
+                    <tr :class="{ highlighted: score === 'Straight' }">
                         <th>STRAIGHT</th>
                         <th>{{ straightValue }}</th>
                     </tr>
-                    <tr>
+                    <tr :class="{ highlighted: score === 'Three of a Kind' }">
                         <th>THREE OF THE KIND</th>
                         <th>{{ threeOfTheKindValue }}</th>
                     </tr>
-                    <tr>
+                    <tr :class="{ highlighted: score === '2 Pairs' }">
                         <th>TWO PAIRS</th>
                         <th>{{ twoPairsValue }}</th>
                     </tr>
-                    <tr>
+                    <tr :class="{ highlighted: score === 'Pair' }">
                         <th>PAIR</th>
                         <th>{{ pairValue }}</th>
                     </tr>
@@ -64,19 +64,33 @@
         <div class="flexi">
             <div class="money">{{ money }}</div>
             <div class="money">{{ fairBet }}</div>
-            <button @click="betPlusOne()">+1</button>
-            <button @click="betMinusOne()">-1</button>
-            <button @click="betPlusTen()">+10</button>
-            <button @click="betMinusTen()">-10</button>
-            <button @click="betPlusFifty()">+50</button>
-            <button @click="betMinusFifty()">-50</button>
-            <div class="play" v-if="firstRound === true" @click="start()"><button>PLAY</button></div>
+            <button v-if="round" @click="betPlusOne()">+1</button>
+            <button v-if="round" @click="betMinusOne()">-1</button>
+            <button v-if="round" @click="betPlusTen()">+10</button>
+            <button v-if="round" @click="betMinusTen()">-10</button>
+            <button v-if="round" @click="betPlusFifty()">+50</button>
+            <button v-if="round" @click="betMinusFifty()">-50</button>
+            <div class="play" v-if="round === 1" @click="start()"><button>PLAY</button></div>
             <!--Heliping Me To Find Missing Sets of Cards-->
             <!--<div class="play" @click="tillGet('Flush')"><button>FIND</button></div>-->
             <div class="play" v-if="firstSelected || secondSelected || thirdSelected || fourthSelected || fifthSelected" @click="changeSelected()"><button>CHANGE CARDS & CHECK</button></div>
-            <div class="play" v-if="!firstRound && !firstSelected && !secondSelected && !thirdSelected && !fourthSelected && !fifthSelected" @click="checkButton()"><button>CHECK</button></div>
+            <div class="play" v-if="round === 2 && !firstSelected && !secondSelected && !thirdSelected && !fourthSelected && !fifthSelected" @click="checkButton()"><button>CHECK</button></div>
+            <div class="play" v-if="round === 3" @click="takeARisk()"><button>Take A Risk</button></div>
+            <div class="play" v-if="round === 3" @click="nextRound()"><button>Next Round</button></div>
         </div>
         <div id="whatsOnHand">{{ score }}</div>
+        <ul class="flexi">
+            <li><img id="firstSecret" src="cards/default.png" v-if="secretLevel === 1"></li>
+            <li><img id="secondSecret" src="cards/default.png" v-if="secretLevel === 2"></li>
+            <li><img id="thirdSecret" src="cards/default.png" v-if="secretLevel === 3"></li>
+            <li><img id="fourthSecret" src="cards/default.png" v-if="secretLevel === 4"></li>
+            <li><img id="fifthSecret" src="cards/default.png" v-if="secretLevel === 5"></li>
+            <li><img id="sixthSecret" src="cards/default.png" v-if="secretLevel === 6"></li>
+            <li><img id="seventhSecret" src="cards/default.png" v-if="secretLevel === 7"></li>
+            <li><img id="eightSecret" src="cards/default.png" v-if="secretLevel === 8"></li>
+            <li><img id="ninethSecret" src="cards/default.png" v-if="secretLevel === 9"></li>
+            <li><img id="tenthSecret" src="cards/default.png" v-if="secretLevel === 10"></li>
+        </ul>
     </content>
 
 </body>

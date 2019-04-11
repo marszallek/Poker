@@ -50,8 +50,12 @@ button{
     background-color: red;
 }
 
-.changeRound:hover{
+.targetCard:hover{
     cursor: pointer;
     transform: translateY(-10px);
     border: 1px solid red;
+}
+
+.highlighted{
+    color: red;
 }

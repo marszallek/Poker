@@ -9,13 +9,14 @@ const app = new Vue({
     data: {
         money: 100,
         bet: 1,
-        firstRound: true,
+        round: 1,
         score: 'Make A Bet',
         firstSelected: false,
         secondSelected: false,
         thirdSelected: false,
         fourthSelected: false,
-        fifthSelected: false
+        fifthSelected: false,
+        secretLevel: 0
     },
     computed: {
         fairBet: function () {
@@ -338,7 +339,7 @@ const app = new Vue({
                 document.getElementById('fifth').src = 'cards/24.png';
             }
         },
-        whatIsOnhand: function () {
+        whatIsOnHand: function () {
             this.straightFlushBig();
         },
         straightFlushBig: function () {
@@ -361,7 +362,7 @@ const app = new Vue({
 
             if ((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
                 (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)) {
-                    if(this.firstRound === false){this.money += this.bet * 100}
+                    if(this.round === 3){this.money += this.bigStraightFlushValue}
                     return this.score = 'Big Straight Flush'
             } else this.straightFlushSmall();
         },
@@ -385,7 +386,7 @@ const app = new Vue({
 
             if ((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
                 (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)) {
-                    if(this.firstRound === false){this.money += this.bet * 50}
+                    if(this.round === 3){this.money += this.smalStraightFlushValue}
                     return this.score = 'Small Straight Flush';
             } else this.flush();
         },
@@ -409,7 +410,7 @@ const app = new Vue({
 
             if ((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
                 (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)) {
-                    if(this.firstRound === false){this.money += this.bet * 25}
+                    if(this.round === 3){this.money += this.flushValue}
                     return this.score = 'Flush';
             } else this.fourOfAKind();
         },
@@ -440,7 +441,7 @@ const app = new Vue({
             if ((fourOfAKindAcesOnHand.length === 4) || (fourOfAKindKingsOnHand.length === 4) ||
                 (fourOfAKindQueensOnHand.length === 4) || (fourOfAKindJacksOnHand.length === 4) ||
                 (fourOfAKindTennsOnHand.length === 4) || (fourOfAKindNinesOnHand.length === 4)) {
-                    if(this.firstRound === false){this.money += this.bet * 16}
+                    if(this.round === 3){this.money += this.fourOfTheKindValue}
                     return this.score = 'Four Of The Kind'
             } else return this.fullHouse()
         },
@@ -504,7 +505,7 @@ const app = new Vue({
                 ((nines.length === 3) && (queens.length === 2)) ||
                 ((nines.length === 3) && (jacks.length === 2)) ||
                 ((nines.length === 3) && (tenns.length === 2))) {
-                    if(this.firstRound === false){this.money += this.bet * 10}
+                    if(this.round === 3){this.money += this.fullHouseValue}
                     return this.score = 'Full House'
             } else this.straight();
         },
@@ -536,7 +537,7 @@ const app = new Vue({
                     (jacks.length === 1) && (tenns.length === 1)) ||
                 ((kings.length === 1) && (queens.length === 1) &&
                     (jacks.length === 1) && (tenns.length === 1) && (nines.length === 1))) {
-                        if(this.firstRound === false){this.money += this.bet * 6}
+                        if(this.round === 3){this.money += this.straightValue}
                         return this.score = 'Straight'
             } else this.threeOfAKind();
         },
@@ -566,7 +567,7 @@ const app = new Vue({
 
             if ((aces.length === 3) || (kings.length === 3) || (queens.length === 3) ||
                 (jacks.length === 3) || (tenns.length === 3) || (nines.length === 3)) {
-                    if(this.firstRound === false){this.money += this.bet * 4}
+                    if(this.round === 3){this.money += this.threeOfTheKindValue}
                     return this.score = 'Three of a Kind'
             } else this.twoPairs()
         },
@@ -630,7 +631,7 @@ const app = new Vue({
                 ((nines.length === 2) && (queens.length === 2)) ||
                 ((nines.length === 2) && (jacks.length === 2)) ||
                 ((nines.length === 2) && (tenns.length === 2))) {
-                    if(this.firstRound === false){this.money += this.bet * 2}
+                    if(this.round === 3){this.money += this.twoPairsValue}
                     return this.score = '2 Pairs';
             } else this.pair()
         },
@@ -660,44 +661,44 @@ const app = new Vue({
 
             if ((aces.length === 2) || (kings.length === 2) || (queens.length === 2) ||
                 (jacks.length === 2) || (tenns.length === 2) || (nines.length === 2)) {
-                    if(this.firstRound === false){this.money += this.bet}
+                    if(this.round === 3){this.money += this.pairValue}
                     return this.score = 'Pair';
                 }else return this.score = 'Try Again'
         },
         start: function () {
             this.random();
             this.check();
-            this.whatIsOnhand();
-            this.firstRound = false;
+            this.whatIsOnHand();
+            this.round = 2;
             this.money -= this.bet;
             return this.money < 0 ? this.score='You Lost' : this.score
         },
         checkButton: function() {
-            this.whatIsOnhand();
-            this.firstRound = true;
+            this.whatIsOnHand();
+            this.round = 3;
         },
         selectFirst: function() {
-            if(!this.firstRound){
+            if(this.round === 2){
                 this.firstSelected = !this.firstSelected
             }else this.firstSelected = this.firstSelected
         },
         selectSecond: function() {
-            if(!this.firstRound){
+            if(this.round === 2){
                 this.secondSelected = !this.secondSelected
             }else this.secondSelected = this.secondSelected
         },
         selectThird: function() {
-            if(!this.firstRound){
+            if(this.round === 2){
             this.thirdSelected = !this.thirdSelected
             }else this.thirdSelected = this.thirdSelected
         },
         selectFourth: function() {
-            if(!this.firstRound){
+            if(this.round === 2){
             this.fourthSelected = !this.fourthSelected
             }else this.fourthSelected = this.fourthSelected
         },
         selectFifth: function() {
-            if(!this.firstRound){
+            if(this.round === 2){
             this.fifthSelected = !this.fifthSelected
             }else this.fifthSelected = this.fifthSelected
         },
@@ -709,7 +710,6 @@ const app = new Vue({
                     if (newOne != one && newOne != two && newOne != three && newOne != four && newOne != five) {
                         one = newOne;
                         this.check();
-                        this.whatIsOnhand();
                         this.firstSelected = !this.firstSelected;
                     }else changeFirstOne()
                 };
@@ -721,7 +721,6 @@ const app = new Vue({
                     if (newTwo != one && newTwo != two && newTwo != three && newTwo != four && newTwo != five) {
                         two = newTwo;
                         this.check();
-                        this.whatIsOnhand();
                         this.secondSelected = !this.secondSelected;
                     }else changeSecondOne()
                 };
@@ -733,7 +732,6 @@ const app = new Vue({
                     if (newThree != one && newThree != two && newThree != three && newThree != four && newThree != five) {
                         three = newThree;
                         this.check();
-                        this.whatIsOnhand();
                         this.thirdSelected = !this.thirdSelected;
                     }else changeThirdOne()
                 };
@@ -745,7 +743,6 @@ const app = new Vue({
                     if (newFour != one && newFour != two && newFour != three && newFour != four && newFour != five) {
                         four = newFour;
                         this.check();
-                        this.whatIsOnhand();
                         this.fourthSelected = !this.fourthSelected;
                     }else changeFourthOne()
                 };
@@ -757,7 +754,6 @@ const app = new Vue({
                     if (newFive != one && newFive != two && newFive != three && newFive != four && newFive != five) {
                         five = newFive;
                         this.check();
-                        this.whatIsOnhand();
                         this.fifthSelected = !this.fifthSelected;
                     }else changeFifthOne()
                 };
@@ -766,14 +762,22 @@ const app = new Vue({
             changeSecondOne();
             changeThirdOne();
             changeFourthOne();
-            changeFifthOne()
-            this.firstRound = true;
+            changeFifthOne();
+            this.whatIsOnHand();
+            this.round = 3;
+        },
+        takARisk: function() {
+           
+        },
+        nextRound: function() {
+            this.whatIsOnHand()
+            this.round = 1;
         },
         // for testing invoke when needed
         /*tillGet: function (iWant) {
             this.random();
             this.check();
-            this.whatIsOnhand();
+            this.whatIsOnHand();
             if (this.score !== iWant) {
                 this.tillGet(iWant)
             } else return this.score
