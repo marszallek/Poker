@@ -15,11 +15,11 @@
     <content id="app">
         <h2>Classic poker</h2>
         <ul class="flexi">
-            <li><img class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected}" @click="selectFirst()"></li>
-            <li><img class="cards" id="second" src="cards/default.png" :class="{toBeChanged : secondSelected}" @click="selectSecond()"></li>
-            <li><img class="cards" id="third" src="cards/default.png" :class="{toBeChanged : thirdSelected}" @click="selectThird()"></li>
-            <li><img class="cards" id="fourth" src="cards/default.png" :class="{toBeChanged : fourthSelected}" @click="selectFourth()"></li>
-            <li><img class="cards" id="fifth" src="cards/default.png" :class="{toBeChanged : fifthSelected}" @click="selectFifth()"></li>
+            <li><img class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected, changeRound : !firstRound}" @click="selectFirst()" :disabled="firstRound"></li>
+            <li><img class="cards" id="second" src="cards/default.png" :class="{toBeChanged : secondSelected, changeRound : !firstRound}" @click="selectSecond()"></li>
+            <li><img class="cards" id="third" src="cards/default.png" :class="{toBeChanged : thirdSelected, changeRound : !firstRound}" @click="selectThird()"></li>
+            <li><img class="cards" id="fourth" src="cards/default.png" :class="{toBeChanged : fourthSelected, changeRound : !firstRound}" @click="selectFourth()"></li>
+            <li><img class="cards" id="fifth" src="cards/default.png" :class="{toBeChanged : fifthSelected, changeRound : !firstRound}" @click="selectFifth()"></li>
             <li>
                 <table>
                     <tr>
@@ -70,9 +70,11 @@
             <button @click="betMinusTen()">-10</button>
             <button @click="betPlusFifty()">+50</button>
             <button @click="betMinusFifty()">-50</button>
-            <div class="play" @click="start()"><button>PLAY</button></div>
+            <div class="play" v-if="firstRound === true" @click="start()"><button>PLAY</button></div>
             <!--Heliping Me To Find Missing Sets of Cards-->
-            <div class="play" @click="tillGet('Flush')"><button>FIND</button></div>
+            <!--<div class="play" @click="tillGet('Flush')"><button>FIND</button></div>-->
+            <div class="play" v-if="firstSelected || secondSelected || thirdSelected || fourthSelected || fifthSelected" @click="changeSelected()"><button>CHANGE CARDS & CHECK</button></div>
+            <div class="play" v-if="!firstRound && !firstSelected && !secondSelected && !thirdSelected && !fourthSelected && !fifthSelected" @click="checkButton()"><button>CHECK</button></div>
         </div>
         <div id="whatsOnHand">{{ score }}</div>
     </content>

@@ -46,11 +46,12 @@ button{
     border: 1px solid black;
 }
 
-.cards:hover{
-    transform: translateY(-20px);
-    border: 1px solid red;
-}
-
 .toBeChanged{
     background-color: red;
+}
+
+.changeRound:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    border: 1px solid red;
 }

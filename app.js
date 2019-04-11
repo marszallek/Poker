@@ -9,6 +9,7 @@ const app = new Vue({
     data: {
         money: 100,
         bet: 1,
+        firstRound: true,
         score: 'Make A Bet',
         firstSelected: false,
         secondSelected: false,
@@ -55,21 +56,6 @@ const app = new Vue({
         },
     },
     methods: {
-        selectFirst: function() {
-            this.firstSelected = !this.firstSelected
-        },
-        selectSecond: function() {
-            this.secondSelected = !this.secondSelected
-        },
-        selectThird: function() {
-            this.thirdSelected = !this.thirdSelected
-        },
-        selectFourth: function() {
-            this.fourthSelected = !this.fourthSelected
-        },
-        selectFifth: function() {
-            this.fifthSelected = !this.fifthSelected
-        },
         betPlusOne: function () { 
             return this.bet++
         },
@@ -352,6 +338,9 @@ const app = new Vue({
                 document.getElementById('fifth').src = 'cards/24.png';
             }
         },
+        whatIsOnhand: function () {
+            this.straightFlushBig();
+        },
         straightFlushBig: function () {
             let straightFlushHearts = [8, 12, 16, 20, 24];
             let straightFlushDiamonds = [7, 11, 15, 19, 23];
@@ -372,7 +361,7 @@ const app = new Vue({
 
             if ((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
                 (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)) {
-                    this.money += this.bet * 100
+                    if(this.firstRound === false){this.money += this.bet * 100}
                     return this.score = 'Big Straight Flush'
             } else this.straightFlushSmall();
         },
@@ -396,7 +385,7 @@ const app = new Vue({
 
             if ((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
                 (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)) {
-                    this.money += this.bet * 50
+                    if(this.firstRound === false){this.money += this.bet * 50}
                     return this.score = 'Small Straight Flush';
             } else this.flush();
         },
@@ -420,7 +409,7 @@ const app = new Vue({
 
             if ((flushOfHeartsOnHand.length === 5) || (flushOfDiamondsOnHand.length === 5) ||
                 (flushOfClubssOnHand.length === 5) || (flushOfSpadesOnHand.length === 5)) {
-                    this.money += this.bet * 25
+                    if(this.firstRound === false){this.money += this.bet * 25}
                     return this.score = 'Flush';
             } else this.fourOfAKind();
         },
@@ -451,7 +440,7 @@ const app = new Vue({
             if ((fourOfAKindAcesOnHand.length === 4) || (fourOfAKindKingsOnHand.length === 4) ||
                 (fourOfAKindQueensOnHand.length === 4) || (fourOfAKindJacksOnHand.length === 4) ||
                 (fourOfAKindTennsOnHand.length === 4) || (fourOfAKindNinesOnHand.length === 4)) {
-                    this.money += this.bet * 16
+                    if(this.firstRound === false){this.money += this.bet * 16}
                     return this.score = 'Four Of The Kind'
             } else return this.fullHouse()
         },
@@ -515,7 +504,7 @@ const app = new Vue({
                 ((nines.length === 3) && (queens.length === 2)) ||
                 ((nines.length === 3) && (jacks.length === 2)) ||
                 ((nines.length === 3) && (tenns.length === 2))) {
-                    this.money += this.bet * 10
+                    if(this.firstRound === false){this.money += this.bet * 10}
                     return this.score = 'Full House'
             } else this.straight();
         },
@@ -547,7 +536,7 @@ const app = new Vue({
                     (jacks.length === 1) && (tenns.length === 1)) ||
                 ((kings.length === 1) && (queens.length === 1) &&
                     (jacks.length === 1) && (tenns.length === 1) && (nines.length === 1))) {
-                        this.money += this.bet * 6
+                        if(this.firstRound === false){this.money += this.bet * 6}
                         return this.score = 'Straight'
             } else this.threeOfAKind();
         },
@@ -577,7 +566,7 @@ const app = new Vue({
 
             if ((aces.length === 3) || (kings.length === 3) || (queens.length === 3) ||
                 (jacks.length === 3) || (tenns.length === 3) || (nines.length === 3)) {
-                    this.money += this.bet * 4
+                    if(this.firstRound === false){this.money += this.bet * 4}
                     return this.score = 'Three of a Kind'
             } else this.twoPairs()
         },
@@ -641,7 +630,7 @@ const app = new Vue({
                 ((nines.length === 2) && (queens.length === 2)) ||
                 ((nines.length === 2) && (jacks.length === 2)) ||
                 ((nines.length === 2) && (tenns.length === 2))) {
-                    this.money += this.bet * 2
+                    if(this.firstRound === false){this.money += this.bet * 2}
                     return this.score = '2 Pairs';
             } else this.pair()
         },
@@ -671,28 +660,123 @@ const app = new Vue({
 
             if ((aces.length === 2) || (kings.length === 2) || (queens.length === 2) ||
                 (jacks.length === 2) || (tenns.length === 2) || (nines.length === 2)) {
-                    this.money += this.bet
+                    if(this.firstRound === false){this.money += this.bet}
                     return this.score = 'Pair';
                 }else return this.score = 'Try Again'
-        },
-        hand: function () {
-            this.straightFlushBig();
         },
         start: function () {
             this.random();
             this.check();
-            this.hand();
+            this.whatIsOnhand();
+            this.firstRound = false;
             this.money -= this.bet;
             return this.money < 0 ? this.score='You Lost' : this.score
         },
+        checkButton: function() {
+            this.whatIsOnhand();
+            this.firstRound = true;
+        },
+        selectFirst: function() {
+            if(!this.firstRound){
+                this.firstSelected = !this.firstSelected
+            }else this.firstSelected = this.firstSelected
+        },
+        selectSecond: function() {
+            if(!this.firstRound){
+                this.secondSelected = !this.secondSelected
+            }else this.secondSelected = this.secondSelected
+        },
+        selectThird: function() {
+            if(!this.firstRound){
+            this.thirdSelected = !this.thirdSelected
+            }else this.thirdSelected = this.thirdSelected
+        },
+        selectFourth: function() {
+            if(!this.firstRound){
+            this.fourthSelected = !this.fourthSelected
+            }else this.fourthSelected = this.fourthSelected
+        },
+        selectFifth: function() {
+            if(!this.firstRound){
+            this.fifthSelected = !this.fifthSelected
+            }else this.fifthSelected = this.fifthSelected
+        },
+        changeSelected: function() {
+            const changeFirstOne = () => {
+                if(this.firstSelected){
+                    let newOne;
+                    newOne = Math.floor(Math.random() * 24 + 1);
+                    if (newOne != one && newOne != two && newOne != three && newOne != four && newOne != five) {
+                        one = newOne;
+                        this.check();
+                        this.whatIsOnhand();
+                        this.firstSelected = !this.firstSelected;
+                    }else changeFirstOne()
+                };
+            };
+            const changeSecondOne = () => {
+                if(this.secondSelected){
+                    let newTwo;
+                    newTwo = Math.floor(Math.random() * 24 + 1);
+                    if (newTwo != one && newTwo != two && newTwo != three && newTwo != four && newTwo != five) {
+                        two = newTwo;
+                        this.check();
+                        this.whatIsOnhand();
+                        this.secondSelected = !this.secondSelected;
+                    }else changeSecondOne()
+                };
+            };
+            const changeThirdOne = () => {
+                if(this.thirdSelected){
+                    let newThree;
+                    newThree = Math.floor(Math.random() * 24 + 1);
+                    if (newThree != one && newThree != two && newThree != three && newThree != four && newThree != five) {
+                        three = newThree;
+                        this.check();
+                        this.whatIsOnhand();
+                        this.thirdSelected = !this.thirdSelected;
+                    }else changeThirdOne()
+                };
+            };
+            const changeFourthOne = () => {
+                if( this.fourthSelected){
+                    let newFour;
+                    newFour = Math.floor(Math.random() * 24 + 1);
+                    if (newFour != one && newFour != two && newFour != three && newFour != four && newFour != five) {
+                        four = newFour;
+                        this.check();
+                        this.whatIsOnhand();
+                        this.fourthSelected = !this.fourthSelected;
+                    }else changeFourthOne()
+                };
+            };
+            const changeFifthOne = () => {
+                if( this.fifthSelected){
+                    let newFive;
+                    newFive = Math.floor(Math.random() * 24 + 1);
+                    if (newFive != one && newFive != two && newFive != three && newFive != four && newFive != five) {
+                        five = newFive;
+                        this.check();
+                        this.whatIsOnhand();
+                        this.fifthSelected = !this.fifthSelected;
+                    }else changeFifthOne()
+                };
+            };
+            changeFirstOne();
+            changeSecondOne();
+            changeThirdOne();
+            changeFourthOne();
+            changeFifthOne()
+            this.firstRound = true;
+        },
         // for testing invoke when needed
-        tillGet: function (iWant) {
+        /*tillGet: function (iWant) {
             this.random();
             this.check();
-            this.hand();
+            this.whatIsOnhand();
             if (this.score !== iWant) {
                 this.tillGet(iWant)
             } else return this.score
-        },
+        },*/
     },
 })
