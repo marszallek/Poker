@@ -3,7 +3,6 @@
     padding: 0;
 }
 
-
 html{
     background-image: url(./Cards/table.jpg);
     background-repeat: no-repeat;
@@ -75,8 +74,8 @@ h2{
 .betButtons{
     border-radius: 1vw;
     min-height: 4vw;
-    min-width: 12vw;
-    font-size: 2vw;
+    min-width: 10vw;
+    font-size: 1.5vw;
     font-weight: 500;
     color: #961c1c;
     background-color: #aaaaaa00;
@@ -95,15 +94,13 @@ h2{
    text-align: center;
 }
 
-.money {
-    box-shadow: 0px 0px 20px 3px #808080;
+.moneyAndBet{
     border-radius: 20px;
+    box-shadow: 0px 0px 20px 3px #808080;
+    padding: 0.75vw 0.5vw;
     letter-spacing: 0.3vw;
     font-size: 1.7vw;
-}
-
-.moneyAndBet{
-    padding: 0.75vw;
+    min-width: 10vw;
 }
 
 .cardsValue{
@@ -124,9 +121,10 @@ h2{
 }
 
 .highlighted{
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 0px 0px 30px 2px black;
     border-radius: 10px;
+    color: rgb(58, 9, 9);
 }
 
 textarea {

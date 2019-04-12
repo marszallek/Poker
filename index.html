@@ -16,7 +16,7 @@
 
     <h1>ROTATE YOUR SCREEN</h1>
     <content id="app">
-        
+
         <h2>Classic Poker</h2>
         <div>
             <ul class="flexi">
@@ -41,28 +41,44 @@
         </div>
         <div class="flexiMenu">
             <div>
-                <table>
-                    <tr class="money">
-                        <th>Your Money</th>
-                        <th class="moneyAndBet">{{ money }}</th>
+                <table class="cardsValue">
+                    <tr :class="{ highlighted: score === 'Big Straight Flush' }">
+                        <th>BIG STRAIGHT FLUSH</th>
+                        <th>{{ bigStraightFlushValue }}</th>
                     </tr>
-                    <tr class="money">
-                        <th>Your Bet</th>
-                        <th class="moneyAndBet">{{ bet }}</th>
+                    <tr :class="{ highlighted: score === 'Small Straight Flush' }">
+                        <th>STRAIGHT FLUSH</th>
+                        <th>{{ smalStraightFlushValue }}</th>
                     </tr>
-                    <tr>
-                        <th><button class="betButtons" v-if="round === 1" @click="betMinusOne()">- 1</button></th>
-                        <th><button class="betButtons" v-if="round === 1" @click="betPlusOne()">+ 1</button></th>
+                    <tr :class="{ highlighted: score === 'Flush' }">
+                        <th>FLUSH</th>
+                        <th>{{ flushValue }}</th>
                     </tr>
-                    <tr>
-                        <th><button class="betButtons" v-if="round === 1" @click="betMinusTen()">- 10</button></th>
-                        <th><button class="betButtons" v-if="round === 1" @click="betPlusTen()">+ 10</button></th>
+                    <tr :class="{ highlighted: score === 'Four Of The Kind' }">
+                        <th>FOUR OF A KIND</th>
+                        <th>{{ fourOfTheKindValue }}</th>
                     </tr>
-                    <tr>
-                        <th><button class="betButtons" v-if="round === 1" @click="betMinusFifty()">- 50</button></th>
-                        <th><button class="betButtons" v-if="round === 1" @click="betPlusFifty()">+ 50</button></th>
+                    <tr :class="{ highlighted: score === 'Full House' }">
+                        <th>FULL HOUSE</th>
+                        <th>{{ fullHouseValue }}</th>
                     </tr>
-                </table>
+                    <tr :class="{ highlighted: score === 'Straight' }">
+                        <th>STRAIGHT</th>
+                        <th>{{ straightValue }}</th>
+                    </tr>
+                    <tr :class="{ highlighted: score === 'Three of a Kind' }">
+                        <th>THREE OF A KIND</th>
+                        <th>{{ threeOfTheKindValue }}</th>
+                    </tr>
+                    <tr :class="{ highlighted: score === '2 Pairs' }">
+                        <th>TWO PAIRS</th>
+                        <th>{{ twoPairsValue }}</th>
+                    </tr>
+                    <tr :class="{ highlighted: score === 'Pair' }">
+                        <th>PAIR</th>
+                        <th>{{ pairValue }}</th>
+                    </tr>
+                </table> 
             </div>
             <div>
                 <div class="play" v-if="round === 1" @click="start()"><button class="playButtons">PLAY</button></div>
@@ -109,42 +125,26 @@
                     <textarea v-model="moneyWon" rows="1" cols="10" disabled>{{ moneyToBeTaken }}</textarea>
                 </div>
             </div>
-            <table class="cardsValue">
-                <tr :class="{ highlighted: score === 'Big Straight Flush' }">
-                    <th>BIG STRAIGHT FLUSH</th>
-                    <th>{{ bigStraightFlushValue }}</th>
+            <table>
+                <tr>
+                    <th class="moneyAndBet">Your Money</th>
+                    <th class="moneyAndBet">{{ money }}</th>
                 </tr>
-                <tr :class="{ highlighted: score === 'Small Straight Flush' }">
-                    <th>STRAIGHT FLUSH</th>
-                    <th>{{ smalStraightFlushValue }}</th>
+                <tr>
+                    <th class="moneyAndBet">Your Bet</th>
+                    <th class="moneyAndBet">{{ bet }}</th>
                 </tr>
-                <tr :class="{ highlighted: score === 'Flush' }">
-                    <th>FLUSH</th>
-                    <th>{{ flushValue }}</th>
+                <tr>
+                    <th><button class="betButtons" v-if="round === 1" @click="betMinusOne()">- 1</button></th>
+                    <th><button class="betButtons" v-if="round === 1" @click="betPlusOne()">+ 1</button></th>
                 </tr>
-                <tr :class="{ highlighted: score === 'Four Of The Kind' }">
-                    <th>FOUR OF A KIND</th>
-                    <th>{{ fourOfTheKindValue }}</th>
+                <tr>
+                    <th><button class="betButtons" v-if="round === 1" @click="betMinusTen()">- 10</button></th>
+                    <th><button class="betButtons" v-if="round === 1" @click="betPlusTen()">+ 10</button></th>
                 </tr>
-                <tr :class="{ highlighted: score === 'Full House' }">
-                    <th>FULL HOUSE</th>
-                    <th>{{ fullHouseValue }}</th>
-                </tr>
-                <tr :class="{ highlighted: score === 'Straight' }">
-                    <th>STRAIGHT</th>
-                    <th>{{ straightValue }}</th>
-                </tr>
-                <tr :class="{ highlighted: score === 'Three of a Kind' }">
-                    <th>THREE OF A KIND</th>
-                    <th>{{ threeOfTheKindValue }}</th>
-                </tr>
-                <tr :class="{ highlighted: score === '2 Pairs' }">
-                    <th>TWO PAIRS</th>
-                    <th>{{ twoPairsValue }}</th>
-                </tr>
-                <tr :class="{ highlighted: score === 'Pair' }">
-                    <th>PAIR</th>
-                    <th>{{ pairValue }}</th>
+                <tr>
+                    <th><button class="betButtons" v-if="round === 1" @click="betMinusFifty()">- 50</button></th>
+                    <th><button class="betButtons" v-if="round === 1" @click="betPlusFifty()">+ 50</button></th>
                 </tr>
             </table>
         </div>
