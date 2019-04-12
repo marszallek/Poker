@@ -18,23 +18,40 @@ h2{
     list-style-type: none;
     justify-content: center;
 }
+
+.flexiMenu{
+    display: flex;
+    justify-content: space-around;
+}
 .cards{
-    width: 9vw;
-    height: 15vw;
-    padding: 2vw;
+    width: 7vw;
+    height: 12vw;
+    padding: 1vw;
 }
 
-#whatsOnHand{
+.riskyCards{
+    width: 7vw;
+    height: 12vw;
+    padding: 0.2vw;
+}
+
+.whatsOnHand{
     text-align: center;
     color: rgb(82, 20, 20);
     font-size: 4vw;
 }
 
+.whatsOnHandValue{
+    text-align: center;
+    color: rgb(82, 20, 20);
+    font-size: 2vw;
+}
+
 button{
     border-radius: 1vw;
-    height: 3vw;
+    height: 4vw;
     width: 6vw;
-    font-size: 1vw;
+    font-size: 0.85vw;
 }
 
 .play{
@@ -50,8 +67,27 @@ button{
     background-color: red;
 }
 
-.changeRound:hover{
+.targetCard:hover{
     cursor: pointer;
     transform: translateY(-10px);
     border: 1px solid red;
+}
+
+.highlighted{
+    color: red;
+}
+
+.riskyCards{
+    width: 6vw;
+    height: 10vw;
+}
+
+textarea {
+    resize: none;
+    text-align: center;
+    font-size: 4vw;
+ }
+
+table th, tr{
+    font-size: 1vw;
 }
