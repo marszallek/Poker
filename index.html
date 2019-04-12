@@ -47,16 +47,16 @@
                 </table>
                 <table>
                     <tr>
-                        <th><button v-if="round === 1" @click="betMinusOne()">-1</button></th>
-                        <th><button v-if="round === 1" @click="betPlusOne()">+1</button></th>
+                        <th><button class="betButtons" v-if="round === 1" @click="betMinusOne()">-1</button></th>
+                        <th><button class="betButtons" v-if="round === 1" @click="betPlusOne()">+1</button></th>
                     </tr>
                     <tr>
-                        <th><button v-if="round === 1" @click="betMinusTen()">-10</button></th>
-                        <th><button v-if="round === 1" @click="betPlusTen()">+10</button></th>
+                        <th><button class="betButtons" v-if="round === 1" @click="betMinusTen()">-10</button></th>
+                        <th><button class="betButtons" v-if="round === 1" @click="betPlusTen()">+10</button></th>
                     </tr>
                     <tr>
-                        <th><button v-if="round === 1" @click="betMinusFifty()">-50</button></th>
-                        <th><button v-if="round === 1" @click="betPlusFifty()">+50</button></th>
+                        <th><button class="betButtons" v-if="round === 1" @click="betMinusFifty()">-50</button></th>
+                        <th><button class="betButtons" v-if="round === 1" @click="betPlusFifty()">+50</button></th>
                     </tr>
                 </table>
             </div>

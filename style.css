@@ -4,7 +4,8 @@
 }
 
 html{
-    background-color: rgb(134, 156, 133);
+    background-image: url(./Cards/table.jpg);
+    background-repeat: no-repeat;
 }
 
 h2{
@@ -24,9 +25,13 @@ h2{
     justify-content: space-around;
 }
 .cards{
-    width: 7vw;
-    height: 12vw;
+    width: 9vw;
+    height: 14vw;
     padding: 1vw;
+    border-radius: 20px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    box-shadow: 0px 0px 10px 5px #80808075;
 }
 
 .riskyCards{
@@ -65,12 +70,14 @@ button{
 
 .toBeChanged{
     background-color: red;
+    box-shadow: inset 0px 0px 10px 10px grey; 
 }
 
 .targetCard:hover{
     cursor: pointer;
-    transform: translateY(-10px);
-    border: 1px solid red;
+    transform: translateY(-20px);
+    border: 1px solid silver;
+    
 }
 
 .highlighted{
@@ -86,8 +93,12 @@ textarea {
     resize: none;
     text-align: center;
     font-size: 4vw;
- }
+}
 
 table th, tr{
     font-size: 1vw;
+}
+
+.betButtons{
+    background-color: #ffcc00;
 }
