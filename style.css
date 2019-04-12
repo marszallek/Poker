@@ -18,10 +18,21 @@ h2{
     list-style-type: none;
     justify-content: center;
 }
+
+.flexiMenu{
+    display: flex;
+    justify-content: space-around;
+}
 .cards{
-    width: 9vw;
-    height: 15vw;
-    padding: 2vw;
+    width: 7vw;
+    height: 12vw;
+    padding: 1vw;
+}
+
+.riskyCards{
+    width: 7vw;
+    height: 12vw;
+    padding: 0.2vw;
 }
 
 .whatsOnHand{
@@ -38,9 +49,9 @@ h2{
 
 button{
     border-radius: 1vw;
-    height: 3vw;
+    height: 4vw;
     width: 6vw;
-    font-size: 1vw;
+    font-size: 0.85vw;
 }
 
 .play{
@@ -76,3 +87,7 @@ textarea {
     text-align: center;
     font-size: 4vw;
  }
+
+table th, tr{
+    font-size: 1vw;
+}

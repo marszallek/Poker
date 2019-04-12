@@ -72,17 +72,9 @@ const app = new Vue({
         fifthSelected: false,
         secretLevel: 0,
         moneyWon: 0,
+        riskMessage: ''
     },
     computed: {
-        fairBet: function () {
-            if (this.bet >= this.money){
-                this.bet = this.money
-                return this.money
-            }else if (this.bet < 0) {
-                this.bet = 1;
-                return 1;
-            } else return this.bet
-        },
         bigStraightFlushValue: function () {
             return this.bet * 100
         },
@@ -134,22 +126,37 @@ const app = new Vue({
     },
     methods: {
         betPlusOne: function () { 
-            return this.bet++
+            if(this.bet >= this.money || this.bet + 1 >= this.money){
+                this.bet = this.money
+                return this.money
+            }else return this.bet ++
         },
         betMinusOne: function () {
-            return this.bet--
+            if(this.bet <= 0 || this.bet - 1 <= 0) {
+                this.bet = 1;
+            }else return this.bet--
         },
         betPlusTen: function () {
-            return this.bet += 10
+            if(this.bet >= this.money || this.bet + 10 >= this.money){
+                this.bet = this.money
+                return this.money
+            }else return this.bet += 10
         },
         betMinusTen: function () {
-            return this.bet -= 10
+            if(this.bet <= 0 || this.bet - 10 <= 0) {
+                this.bet = 1;
+            }else return this.bet -= 10
         },
         betPlusFifty: function () {
-            return this.bet += 50
+            if(this.bet >= this.money || this.bet + 50 >= this.money){
+                this.bet = this.money
+                return this.money
+            }else return this.bet += 50
         },
         betMinusFifty: function () {
-            return this.bet -= 50
+            if(this.bet <= 0 || this.bet - 50 <= 0) {
+                this.bet = 1;
+            }else return this.bet -= 50
         },
         random: function () {
             one = Math.floor(Math.random() * 24 + 1);
@@ -739,7 +746,7 @@ const app = new Vue({
                 (jacks.length === 2) || (tenns.length === 2) || (nines.length === 2)) {
                     if(this.round === 3){this.money += this.pairValue}
                     return this.score = 'Pair';
-                }else return this.score = 'Try Again'
+                }else return this.score = 'Shit Happenns'
         },
         start: function () {
             this.random();
@@ -747,11 +754,10 @@ const app = new Vue({
             this.whatIsOnHand();
             this.round = 2;
             this.money -= this.bet;
-            return this.money < 0 ? this.score='You Lost' : this.score
         },
         checkButton: function() {
             this.whatIsOnHand();
-            this.round = 3;
+            this.round = 3
         },
         selectFirst: function() {
             if(this.round === 2){
@@ -859,10 +865,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('firstSecret').src = fristLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Won';
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };      
         },
         lowCard2: function() {
@@ -871,10 +881,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('secondSecret').src = secondLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Won !'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard3: function() {
@@ -883,10 +897,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('thirdSecret').src = thirdLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Won !!'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard4: function() {
@@ -895,10 +913,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('fourthSecret').src = fourthLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Won Again :)'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard5: function() {
@@ -907,10 +929,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('fifthSecret').src = fifthLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'And Won Again !!! :)'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard6: function() {
@@ -919,10 +945,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('sixthSecret').src = sixthLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'And Again !!! :)'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard7: function() {
@@ -931,10 +961,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('seventhSecret').src = seventhLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'Won You Lucky You... :)'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard8: function() {
@@ -943,10 +977,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('eightSecret').src = eightLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'Won You Lucky Bastardo'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard9: function() {
@@ -955,10 +993,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('ninethSecret').src = ninethLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = '9 In The Row Won !!!'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard10: function() {
@@ -967,10 +1009,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('tenthSecret').src = tenthLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Should Try Lottery :)'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard11: function() {
@@ -979,10 +1025,14 @@ const app = new Vue({
             if(secretCard < 13){
                 document.getElementById('eleventhSecret').src = eleventhLowCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'One More And JACKPOT !!!'
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         lowCard12: function() {
@@ -990,12 +1040,14 @@ const app = new Vue({
             secretCard = Math.floor(Math.random() * 24 + 1);
             if(secretCard < 13){
                 document.getElementById('twelvethSecret').src = twelvethLowCard;
-                this.moneyWon *= 2;
+                this.moneyWon *= 10;
                 alert('You Smash The Bank');
                 this.secretLevel = 0
             }else if (secretCard > 12){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard1: function() {
@@ -1004,10 +1056,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('firstSecret').src = fristHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Won'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };      
         },
         highCard2: function() {
@@ -1016,10 +1072,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('secondSecret').src = secondHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Won !'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard3: function() {
@@ -1028,10 +1088,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('thirdSecret').src = thirdHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Won !!'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard4: function() {
@@ -1040,10 +1104,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('fourthSecret').src = fourthHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Won Again :)'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard5: function() {
@@ -1052,10 +1120,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('fifthSecret').src = fifthHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'And Won Again !!! :)'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard6: function() {
@@ -1064,10 +1136,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('sixthSecret').src = sixthHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'And Again !!! :)'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard7: function() {
@@ -1076,10 +1152,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('seventhSecret').src = seventhHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'Won You Lucky You... :)'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard8: function() {
@@ -1088,10 +1168,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('eightSecret').src = eightHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'Won You Lucky Bastardo'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard9: function() {
@@ -1100,10 +1184,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('ninethSecret').src = ninethHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = '9 In The Row Won !!!'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard10: function() {
@@ -1112,10 +1200,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('tenthSecret').src = tenthHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'You Should Try Lottery :)'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard11: function() {
@@ -1124,10 +1216,14 @@ const app = new Vue({
             if(secretCard > 12){
                 document.getElementById('eleventhSecret').src = eleventhHighCard;
                 this.moneyWon *= 2;
-                this.secretLevel ++
+                this.secretLevel ++;
+                this.riskMessage = 'One More And JACKPOT !!!'
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.riskMessage = '';
+                this.score = 'You Lost';
+                this.round = 5
             };
         },
         highCard12: function() {
@@ -1140,15 +1236,27 @@ const app = new Vue({
                 this.secretLevel = 0
             }else if (secretCard < 13){
                 this.moneyWon = 0;
-                this.secretLevel = 0
+                this.secretLevel = 0;
+                this.score = 'You Lost';
+                this.round = 5
             };
+        },
+        startOver: function() {
+            if(this.money <= 0){
+                this.score = 'You Lost';
+                this.bet = 0;
+                return this.round = 5
+            }else this.score = 'Good Luck';
+            this.round = 1;
+            this.riskMessage = ''
         },
         collectMoneyFromRisk: function() {
             this.money = this.money + this. moneyWon;
             this.round = 1;
             this.secretLevel = 0;
             this.moneyWon = 0;
-            this.score = 'Good Luck'
+            this.score = 'Good Luck';
+            this.riskMessage = ''
         }
         // for testing invoke when needed
         /*tillGet: function (iWant) {
