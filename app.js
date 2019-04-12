@@ -158,6 +158,9 @@ const app = new Vue({
                 this.bet = 1;
             }else return this.bet -= 50
         },
+        betMax: function() {
+            this.bet = this.money
+        },
         random: function () {
             one = Math.floor(Math.random() * 24 + 1);
             two = Math.floor(Math.random() * 24 + 1);

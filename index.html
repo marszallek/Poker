@@ -20,23 +20,23 @@
         <h2>{{ riskMessage }}</h2>
         <div>
             <ul class="flexi">
-                <li v-if="secretLevel === 0 && round !== 5"><img class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected, targetCard : round === 2}" @click="selectFirst()"></li>
-                <li v-if="secretLevel === 0 && round !== 5"><img class="cards" id="second" src="cards/default.png" :class="{toBeChanged : secondSelected, targetCard : round === 2}" @click="selectSecond()"></li>
-                <li v-if="secretLevel === 0 && round !== 5"><img class="cards" id="third" src="cards/default.png" :class="{toBeChanged : thirdSelected, targetCard : round === 2}" @click="selectThird()"></li>
-                <li v-if="secretLevel === 0 && round !== 5"><img class="cards" id="fourth" src="cards/default.png" :class="{toBeChanged : fourthSelected, targetCard : round === 2}" @click="selectFourth()"></li>
-                <li v-if="secretLevel === 0 && round !== 5"><img class="cards" id="fifth" src="cards/default.png" :class="{toBeChanged : fifthSelected, targetCard : round === 2}" @click="selectFifth()"></li>
-                <li><img class="riskyCards" id="firstSecret" src="cards/default.png" v-if="secretLevel === 1 || secretLevel === 2 || secretLevel === 3 || secretLevel === 4 || secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="secondSecret" src="cards/default.png" v-if="secretLevel === 2 || secretLevel === 3 || secretLevel === 4 || secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="thirdSecret" src="cards/default.png" v-if="secretLevel === 3 || secretLevel === 4 || secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="fourthSecret" src="cards/default.png" v-if="secretLevel === 4 || secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="fifthSecret" src="cards/default.png" v-if="secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="sixthSecret" src="cards/default.png" v-if="secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="seventhSecret" src="cards/default.png" v-if="secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="eightSecret" src="cards/default.png" v-if="secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="ninethSecret" src="cards/default.png" v-if="secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="tenthSecret" src="cards/default.png" v-if="secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="eleventhSecret" src="cards/default.png" v-if="secretLevel === 11 || secretLevel === 12 || round === 5"></li>
-                <li><img class="riskyCards" id="twelvethSecret" src="cards/default.png" v-if="secretLevel === 12 || round === 5"></li>
+                <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard" class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected, targetCard : round === 2}" @click="selectFirst()"></li>
+                <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard" class="cards" id="second" src="cards/default.png" :class="{toBeChanged : secondSelected, targetCard : round === 2}" @click="selectSecond()"></li>
+                <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard" class="cards" id="third" src="cards/default.png" :class="{toBeChanged : thirdSelected, targetCard : round === 2}" @click="selectThird()"></li>
+                <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard" class="cards" id="fourth" src="cards/default.png" :class="{toBeChanged : fourthSelected, targetCard : round === 2}" @click="selectFourth()"></li>
+                <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard" class="cards" id="fifth" src="cards/default.png" :class="{toBeChanged : fifthSelected, targetCard : round === 2}" @click="selectFifth()"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="firstSecret" src="cards/default.png" v-if="secretLevel === 1 || secretLevel === 2 || secretLevel === 3 || secretLevel === 4 || secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="secondSecret" src="cards/default.png" v-if="secretLevel === 2 || secretLevel === 3 || secretLevel === 4 || secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="thirdSecret" src="cards/default.png" v-if="secretLevel === 3 || secretLevel === 4 || secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="fourthSecret" src="cards/default.png" v-if="secretLevel === 4 || secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="fifthSecret" src="cards/default.png" v-if="secretLevel === 5 || secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="sixthSecret" src="cards/default.png" v-if="secretLevel === 6 || secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="seventhSecret" src="cards/default.png" v-if="secretLevel === 7 || secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="eightSecret" src="cards/default.png" v-if="secretLevel === 8 || secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="ninethSecret" src="cards/default.png" v-if="secretLevel === 9 || secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="tenthSecret" src="cards/default.png" v-if="secretLevel === 10 || secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="eleventhSecret" src="cards/default.png" v-if="secretLevel === 11 || secretLevel === 12 || round === 5"></li>
+                <li><img alt="pokerCard" class="riskyCards" id="twelvethSecret" src="cards/default.png" v-if="secretLevel === 12 || round === 5"></li>
             </ul>
         </div>
         <div class="flexiMenu">
@@ -135,7 +135,8 @@
                 </tr>
                 <tr>
                     <th><button class="betButtons" v-if="round === 1" @click="betMinusOne()">- 1</button></th>
-                    <th><button class="betButtons" v-if="round === 1" @click="betPlusOne()">+ 1</button></th>
+                    <th v-if="round === 1 && money <= 400"><button class="betButtons" @click="betPlusOne()">+ 1</button></th>
+                    <th v-if="money > 400"><button class="betButtons" @click="betMax()">MAX</button></th>
                 </tr>
                 <tr>
                     <th><button class="betButtons" v-if="round === 1" @click="betMinusTen()">- 10</button></th>

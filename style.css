@@ -115,7 +115,7 @@ h2{
 
 .targetCard:hover{
     cursor: pointer;
-    transform: translateY(-20px);
+    transform: scale(1.1);
     border: 0px solid silver;
     box-shadow: inset 0px 0px 10px 10px grey; 
 }
