@@ -746,7 +746,7 @@ const app = new Vue({
                 (jacks.length === 2) || (tenns.length === 2) || (nines.length === 2)) {
                     if(this.round === 3){this.money += this.pairValue}
                     return this.score = 'Pair';
-                }else return this.score = 'Shit Happenns'
+                }else return this.score = 'Shit Happens'
         },
         start: function () {
             this.random();
