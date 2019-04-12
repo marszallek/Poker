@@ -47,7 +47,7 @@ h2{
 .riskyCards{
     width: 9vw;
     height: 14vw;
-    margin: 0px -10px;
+    margin: 1vw -10px;
 
 }
 
@@ -77,7 +77,7 @@ h2{
     min-width: 10vw;
     font-size: 1.5vw;
     font-weight: 500;
-    color: #961c1c;
+    color: #7d0000;
     background-color: #aaaaaa00;
 }
 
@@ -115,8 +115,8 @@ h2{
 
 .targetCard:hover{
     cursor: pointer;
-    transform: translateY(10px);
-    border: 1px solid silver;
+    transform: translateY(-20px);
+    border: 0px solid silver;
     box-shadow: inset 0px 0px 10px 10px grey; 
 }
 

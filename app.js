@@ -72,7 +72,7 @@ const app = new Vue({
         fifthSelected: false,
         secretLevel: 0,
         moneyWon: 0,
-        riskMessage: ''
+        riskMessage: 'Classic Poker'
     },
     computed: {
         bigStraightFlushValue: function () {
@@ -873,7 +873,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };      
@@ -889,7 +889,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -905,7 +905,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -921,7 +921,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -937,7 +937,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -953,7 +953,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -969,7 +969,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -985,7 +985,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1001,7 +1001,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1017,7 +1017,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1033,7 +1033,7 @@ const app = new Vue({
             }else if (secretCard > 12){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1064,7 +1064,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };      
@@ -1080,7 +1080,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1096,7 +1096,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1112,7 +1112,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1128,7 +1128,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1144,7 +1144,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1160,7 +1160,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1176,7 +1176,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1192,7 +1192,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1208,7 +1208,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1224,7 +1224,7 @@ const app = new Vue({
             }else if (secretCard < 13){
                 this.moneyWon = 0;
                 this.secretLevel = 0;
-                this.riskMessage = '';
+                this.riskMessage = 'Classic Poker';
                 this.score = 'You Lost';
                 this.round = 5
             };
@@ -1251,7 +1251,7 @@ const app = new Vue({
                 return this.round = 5
             }else this.score = 'Good Luck';
             this.round = 1;
-            this.riskMessage = ''
+            this.riskMessage = 'Classic Poker'
         },
         collectMoneyFromRisk: function() {
             this.money = this.money + this. moneyWon;
@@ -1259,7 +1259,7 @@ const app = new Vue({
             this.secretLevel = 0;
             this.moneyWon = 0;
             this.score = 'Good Luck';
-            this.riskMessage = ''
+            this.riskMessage = 'Classic Poker'
         }
         // for testing invoke when needed
         /*tillGet: function (iWant) {

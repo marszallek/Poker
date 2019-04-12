@@ -17,7 +17,7 @@
     <h1>ROTATE YOUR SCREEN</h1>
     <content id="app">
 
-        <h2>Classic Poker</h2>
+        <h2>{{ riskMessage }}</h2>
         <div>
             <ul class="flexi">
                 <li v-if="secretLevel === 0 && round !== 5"><img class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected, targetCard : round === 2}" @click="selectFirst()"></li>
@@ -119,7 +119,6 @@
                     <div class="play" v-if="round === 5 || score === 'Shit Happens'" @click="startOver()"><button class="playButtons">Start Over</button></div>
                 </div>
                 <div class="whatsOnHand">{{ score }}</div>
-                <div class="whatsOnHand">{{ riskMessage }}</div>
                 <div class="whatsOnHandValue">
                     <p>Money To Take:</p>
                     <textarea v-model="moneyWon" rows="1" cols="10" disabled>{{ moneyToBeTaken }}</textarea>
