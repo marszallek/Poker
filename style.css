@@ -3,15 +3,25 @@
     padding: 0;
 }
 
+
 html{
     background-image: url(./Cards/table.jpg);
     background-repeat: no-repeat;
+    background-position: -160px 0px;
+}
+
+h1{
+    display: none;
 }
 
 h2{
     text-align: center;
-    font-size: 4vw;
-    margin: 2vw;
+    font-size: 5vw;
+    margin: 0.5vw;
+    font-weight: 900;
+    color: #8c7f4a;
+    letter-spacing: 1vw;
+    font-family: 'Indie Flower', cursive;
 }
 
 .flexi{
@@ -23,6 +33,7 @@ h2{
 .flexiMenu{
     display: flex;
     justify-content: space-around;
+    margin-top: 10px;
 }
 .cards{
     width: 9vw;
@@ -35,37 +46,69 @@ h2{
 }
 
 .riskyCards{
-    width: 7vw;
-    height: 12vw;
-    padding: 0.2vw;
+    width: 9vw;
+    height: 14vw;
+    margin: 0px -10px;
+
 }
 
 .whatsOnHand{
     text-align: center;
-    color: rgb(82, 20, 20);
     font-size: 4vw;
 }
 
 .whatsOnHandValue{
     text-align: center;
-    color: rgb(82, 20, 20);
     font-size: 2vw;
 }
 
-button{
+.playButtons{
     border-radius: 1vw;
-    height: 4vw;
-    width: 6vw;
-    font-size: 0.85vw;
+    min-height: 3vw;
+    min-width: 10vw;
+    font-size: 1.2vw;
+    font-weight: 600;
+    letter-spacing: 0.1vw;
+    background-color: #aaaaaa00;
+}
+
+.betButtons{
+    border-radius: 1vw;
+    min-height: 4vw;
+    min-width: 12vw;
+    font-size: 2vw;
+    font-weight: 500;
+    color: #961c1c;
+    background-color: #aaaaaa00;
+}
+
+.playButtons:focus, .betButtons:focus{
+    outline: 0;
+    transform: scale(1.05);
+}
+
+.playButtons:hover, .betButtons:hover{
+    transform: scale(1.05);
 }
 
 .play{
    text-align: center;
 }
 
-.money{
-    padding: 5px 50px;
-    border: 1px solid black;
+.money {
+    box-shadow: 0px 0px 20px 3px #808080;
+    border-radius: 20px;
+    letter-spacing: 0.3vw;
+    font-size: 1.7vw;
+}
+
+.moneyAndBet{
+    padding: 0.75vw;
+}
+
+.cardsValue{
+    font-size: 1.6vw;
+    letter-spacing: 0.2vw;
 }
 
 .toBeChanged{
@@ -75,30 +118,41 @@ button{
 
 .targetCard:hover{
     cursor: pointer;
-    transform: translateY(-20px);
+    transform: translateY(10px);
     border: 1px solid silver;
-    
+    box-shadow: inset 0px 0px 10px 10px grey; 
 }
 
 .highlighted{
-    color: red;
-}
-
-.riskyCards{
-    width: 6vw;
-    height: 10vw;
+    transform: scale(1.2);
+    box-shadow: 0px 0px 30px 2px black;
+    border-radius: 10px;
 }
 
 textarea {
     resize: none;
     text-align: center;
     font-size: 4vw;
+    background-color: #bf6a6a00;
+    border: none;
+    box-shadow: inset 0px 0px 20px 5px #42232361;
+    border-radius: 20px;
 }
 
-table th, tr{
-    font-size: 1vw;
-}
+@media screen and (max-width: 600px){
+    html{
+        background-color: black;
+        background-image: none;
+    }
 
-.betButtons{
-    background-color: #ffcc00;
+    h1{
+        display: block;
+        color: white;
+        transform: rotate(270deg);
+        margin-top: 230px;
+    }
+
+    content{
+        display: none;
+    }
 }

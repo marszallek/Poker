@@ -61,7 +61,7 @@ let twelvethHighCard = highCards.splice((Math.floor(Math.random() * highCards.le
 const app = new Vue({
     el: '#app',
     data: {
-        money: 100,
+        money: 20,
         bet: 1,
         round: 1,
         score: 'Make A Bet',
@@ -744,8 +744,11 @@ const app = new Vue({
 
             if ((aces.length === 2) || (kings.length === 2) || (queens.length === 2) ||
                 (jacks.length === 2) || (tenns.length === 2) || (nines.length === 2)) {
-                    if(this.round === 3){this.money += this.pairValue}
-                    return this.score = 'Pair';
+                    if(this.round === 3){
+                        this.money += this.pairValue
+                    }else return this.score = 'Pair';
+                }else if(this.round === 1){
+                    this.score = 'Change Cards'
                 }else return this.score = 'Shit Happens'
         },
         start: function () {
