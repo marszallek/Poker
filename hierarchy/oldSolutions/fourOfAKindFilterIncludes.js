@@ -25,6 +25,6 @@ const fourOfAKind = () => {
     if ((fourOfAKindAcesOnHand.length === 4) || (fourOfAKindKingsOnHand.length === 4) ||
         (fourOfAKindQueensOnHand.length === 4) || (fourOfAKindJacksOnHand.length === 4) ||
         (fourOfAKindTennsOnHand.length === 4) || (fourOfAKindNinesOnHand.length === 4)) {
-        document.getElementById('whatsOnHand').textContent = 'Four Of a Kind';
+        document.getElementById('whatsOnHand').innerHTML = 'Four Of a Kind';
     } else fullHouse();
 };

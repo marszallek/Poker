@@ -36,6 +36,22 @@ button{
     width: 6vw;
     font-size: 1vw;
 }
+
 .play{
    text-align: center;
+}
+
+.money{
+    padding: 5px 50px;
+    border: 1px solid black;
+}
+
+.toBeChanged{
+    background-color: red;
+}
+
+.changeRound:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    border: 1px solid red;
 }
