@@ -116,7 +116,7 @@
                     <div class="play" v-if="round === 3 && score !== 'Shit Happens'" @click="takeARisk()"><button class="playButtons">Take A Risk</button></div>
                     <div class="play" v-if="round === 3 && score !== 'Shit Happens'" @click="collectMoney()"><button class="playButtons">Collect The Money</button></div>
                     <div class="play" v-if="round === 4" @click="collectMoneyFromRisk()"><button class="playButtons">Collect The Money</button></div>
-                    <div class="play" v-if="round === 5 || score === 'Shit Happens'" @click="startOver()"><button class="playButtons">Start Over</button></div>
+                    <div class="play" v-if="(round === 5 || score === 'Shit Happens') && score !== 'You Lost'" @click="startOver()"><button class="playButtons">Start Over</button></div>
                 </div>
                 <div class="whatsOnHand">{{ score }}</div>
                 <div class="whatsOnHandValue">
