@@ -64,6 +64,6 @@ export const changeObj = {
         changeFourthOne();
         changeFifthOne();
         playButtons.whatIsOnHand();
-        data.round = 3;
+        data.round = 3
     },
 }

@@ -56,7 +56,7 @@ export let BetButtonComponent = Vue.extend({
                     <tr>
                         <th><button class="betButtons" v-if="round === 1" @click="betMinusOne()">- 1</button></th>
                         <th v-if="round === 1 && money <= 400"><button class="betButtons" @click="betPlusOne()">+ 1</button></th>
-                        <th v-if="money > 400"><button class="betButtons" @click="betMax()">MAX</button></th>
+                        <th v-if="money > 400 && round === 1"><button class="betButtons" @click="betMax()">MAX</button></th>
                     </tr>
                     <tr>
                         <th><button class="betButtons" v-if="round === 1" @click="betMinusTen()">- 10</button></th>
