@@ -2,6 +2,7 @@ import {data} from '../app.js'
 import {hierarchy} from '../hierarchy/hierarchy.js'
 
 export const playButtons = {
+
     start: function () {
         this.random();
         this.check();

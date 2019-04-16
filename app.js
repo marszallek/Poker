@@ -5,8 +5,7 @@ import {riskObj} from './components/risk.js'
 
 Vue.component('bet-button-component', BetButtonComponent);
 
-
-export let data = {
+export const data = {
     one: 0,
     two: 0,
     three: 0,
@@ -24,32 +23,29 @@ export let data = {
     secretLevel: 0,
     moneyWon: 0,
     riskMessage: 'Classic Poker'
-}
+};
 
 const app = new Vue({
     el: '#app',
     data: data,
     computed: {
-        bigStraightFlushValue: function () {
-            return this.bet * 100
+        straightFlushValue: function () {
+            return this.bet * 500
         },
-        smallStraightFlushValue: function () {
+        fourOfTheKindValue: function () {
+            return this.bet * 200
+        },
+        fullHouseValue: function () {
             return this.bet * 50
         },
         flushValue: function () {
-            return this.bet * 25
-        },
-        fourOfTheKindValue: function () {
-            return this.bet * 16
-        },
-        fullHouseValue: function () {
-            return this.bet * 10
+            return this.bet * 20
         },
         straightValue: function () {
-            return this.bet * 6
+            return this.bet * 10
         },
         threeOfTheKindValue: function () {
-            return this.bet * 4
+            return this.bet * 5
         },
         twoPairsValue: function () {
             return this.bet * 2
@@ -58,24 +54,22 @@ const app = new Vue({
             return this.bet
         },
         moneyToBeTaken: function() {
-            if(this.score === 'Big Straight Flush'){
-                return this.moneyWon = this.bigStraightFlushValue
-            }else if(this.score === 'Small Straight Flush'){
-                return this.moneyWon = this.smallStraightFlushValue
-            }else if(this.score === 'Flush'){
-                return this.moneyWon = this.flushValue
+            if(this.score === 'Straight Flush'){
+                return this.moneyWon = this.straightFlushValue;
             }else if(this.score === 'Four Of The Kind'){
-                return this.moneyWon = this.fourOfTheKindValue
+                return this.moneyWon = this.fourOfTheKindValue;
             }else if(this.score === 'Full House'){
-                return this.moneyWon = this.fullHouseValue
+                return this.moneyWon = this.fullHouseValue;
+            }else if(this.score === 'Flush'){
+                return this.moneyWon = this.flushValue;
             }else if(this.score === 'Straight'){
-                return this.moneyWon = this.straightValue
+                return this.moneyWon = this.straightValue;
             }else if(this.score === 'Three of a Kind'){
-                return this.moneyWon = this.threeOfTheKindValue
+                return this.moneyWon = this.threeOfTheKindValue;
             }else if(this.score === '2 Pairs'){
-                return this.moneyWon = this.twoPairsValue
+                return this.moneyWon = this.twoPairsValue;
             }else if(this.score === 'Pair'){
-                return this.moneyWon = this.pairValue
+                return this.moneyWon = this.pairValue;
             }else return this.moneyWon = 0
         },
     },
@@ -192,12 +186,10 @@ const app = new Vue({
         },
         // for testing invoke when needed
         tillGet: function (iWant) {
-            playButtons.random();
-            playButtons.check();
-            playButtons.whatIsOnHand();
+            playButtons.start()
             if (this.score !== iWant) {
                 this.tillGet(iWant)
-            } else return this.score
+            }else return this.score
         },
     },
 })
