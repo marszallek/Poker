@@ -22,7 +22,7 @@
         <h2>{{ riskMessage }}</h2>
         <div>
             <ul class="flexi">
-                <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard1" class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected, targetCard : round === 2}" @click="selectFirst()"></li>
+                <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard1" class="cards" id="first" src="cards/default.png" :class="{toBeChanged : firstSelected, targetCard : round === 2}" @click="selectFirst()">{{ firstCard }}</li>
                 <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard2" class="cards" id="second" src="cards/default.png" :class="{toBeChanged : secondSelected, targetCard : round === 2}" @click="selectSecond()"></li>
                 <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard3" class="cards" id="third" src="cards/default.png" :class="{toBeChanged : thirdSelected, targetCard : round === 2}" @click="selectThird()"></li>
                 <li v-if="secretLevel === 0 && round !== 5"><img alt="pokerCard4" class="cards" id="fourth" src="cards/default.png" :class="{toBeChanged : fourthSelected, targetCard : round === 2}" @click="selectFourth()"></li>
