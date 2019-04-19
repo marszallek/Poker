@@ -9,7 +9,6 @@ export const changeObj = {
                 playButtons.check();
                 data.firstSelected = !data.firstSelected
             };
-            console.log(playButtons.allCards)
         };
         const changeSecondOne = () => {
             if(data.secondSelected){
@@ -17,7 +16,6 @@ export const changeObj = {
                 playButtons.check();
                 data.secondSelected = !data.secondSelected;
             };
-            console.log(playButtons.allCards)
         };
         const changeThirdOne = () => {
             if(data.thirdSelected){
@@ -26,7 +24,6 @@ export const changeObj = {
                     playButtons.check();
                     data.thirdSelected = !data.thirdSelected
             };
-            console.log(playButtons.allCards)
         };
         const changeFourthOne = () => {
             if(data.fourthSelected){
@@ -34,7 +31,6 @@ export const changeObj = {
                 playButtons.check();
                 data.fourthSelected = !data.fourthSelected
             };
-            console.log(playButtons.allCards)
         };
         const changeFifthOne = () => {
             if(data.fifthSelected){
@@ -42,7 +38,6 @@ export const changeObj = {
                 playButtons.check();
                 data.fifthSelected = !data.fifthSelected
             };
-            console.log(playButtons.allCards)
         };
         changeFirstOne();
         changeSecondOne();

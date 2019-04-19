@@ -44,7 +44,6 @@ export const playButtons = {
         for(i = 1; i < 53; i ++){
             this.allCards.push(i)
         };
-        console.log(this.allCards);
         data.one = this.allCards.splice(Math.random()*51+1, 1)[0];
         data.two = this.allCards.splice(Math.random()*50+1, 1)[0];
         data.three = this.allCards.splice(Math.random()*49+1, 1)[0];
