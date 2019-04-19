@@ -2,7 +2,7 @@ import {data} from '../app.js'
 import {hierarchy} from '../hierarchy/hierarchy.js'
 
 export const playButtons = {
-
+    allCards: [],
     start: function () {
         this.random();
         this.check();
@@ -39,16 +39,15 @@ export const playButtons = {
         data.riskMessage = 'Classic Poker'
     },
     random: function () {
-        data.one = Math.floor(Math.random() * 52 + 1);
-        data.two = Math.floor(Math.random() * 52 + 1);
-        data.three = Math.floor(Math.random() * 52 + 1);
-        data.four = Math.floor(Math.random() * 52 + 1);
-        data.five = Math.floor(Math.random() * 52 + 1);
-
-        if (data.one === data.two || data.one === data.three || data.one === data.four || data.one === data.five || data.two === data.three ||
-            data.two === data.four || data.two === data.five || data.three === data.four || data.three === data.five || data.four === data.five) {
-            this.random()
-        }
+        let i;
+        for(i = 1; i < 53; i ++){
+            this.allCards.push(i)
+        };
+        data.one = this.allCards.splice(Math.random()*51+1, 1)[0];
+        data.two = this.allCards.splice(Math.random()*50+1, 1)[0];
+        data.three = this.allCards.splice(Math.random()*49+1, 1)[0];
+        data.four = this.allCards.splice(Math.random()*48+1, 1)[0];
+        data.five = this.allCards.splice(Math.random()*47+1, 1)[0]
     },
     whatIsOnHand: function () {
         hierarchy.straightFlush();

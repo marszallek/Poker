@@ -42,8 +42,6 @@ export const hierarchy = {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
         let sortedHand = whatsOnHand.sort((a,b) => a-b);
 
-        console.log(whatsOnHand);
-
         if(sortedHand[0] + 4 === sortedHand[1] && sortedHand[0] + 8 === sortedHand[2] &&
             sortedHand[0] + 12 === sortedHand[3] && sortedHand[0] + 16 === sortedHand[4]){
                 if(data.round === 3){
@@ -95,7 +93,7 @@ export const hierarchy = {
             this.threes = this.checkHand(this.fourThrees, whatsOnHand),
             this.twos = this.checkHand(this.fourTwos, whatsOnHand)
         ];
-
+        
         if (this.lookForPairs(blockOfCards) === 1 && this.lookForThreeOfAKind(blockOfCards) === 1) {
                 if(data.round === 3){
                     data.money += data.fullHouseValue;
