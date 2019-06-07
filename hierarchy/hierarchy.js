@@ -23,19 +23,19 @@ export const hierarchy = {
      return whereToLook.filter((x) => onHand.includes(x));
     },
     lookForPairs: function (block) {
-        return block.filter((x) => x.length === 2).length
+        return block.filter((x) => x.length === 2).length;
     },
     lookForThreeOfAKind: function (block) {
-        return block.filter((x) => x.length === 3).length
+        return block.filter((x) => x.length === 3).length;
     },
     lookForStraight: function (block) {
-        return block.filter((x) => x.length === 1).length
+        return block.filter((x) => x.length === 1).length;
     },
     lookForFourOfAKind: function (block) {
-        return block.filter((x) => x.length === 4).length
+        return block.filter((x) => x.length === 4).length;
     },
     lookForFlush: function (block){
-        return block.filter((x) => x.length === 5).length
+        return block.filter((x) => x.length === 5).length;
     },
 
     straightFlush: function () {
@@ -46,7 +46,7 @@ export const hierarchy = {
             sortedHand[0] + 12 === sortedHand[3] && sortedHand[0] + 16 === sortedHand[4]){
                 if(data.round === 3){
                     data.money += data.bigStraightFlushValue;
-                }else return data.score = 'Straight Flush';
+                }else data.score = 'Straight Flush';
         }else this.fourOfAKind();
 
     },
@@ -72,7 +72,7 @@ export const hierarchy = {
         if (this.lookForFourOfAKind(blockOfCards) === 1) {
                 if(data.round === 3){
                     data.money += data.fourOfTheKindValue;
-                }else return data.score = 'Four Of The Kind';
+                }else data.score = 'Four Of The Kind';
         } else return this.fullHouse();
     },
     fullHouse: function () {
@@ -97,7 +97,7 @@ export const hierarchy = {
         if (this.lookForPairs(blockOfCards) === 1 && this.lookForThreeOfAKind(blockOfCards) === 1) {
                 if(data.round === 3){
                     data.money += data.fullHouseValue;
-                }else return data.score = 'Full House';
+                }else data.score = 'Full House';
         } else this.flush();
     },
     flush: function () {
@@ -111,8 +111,9 @@ export const hierarchy = {
         ];
         
         if (this.lookForFlush(blockOfFlush) === 1) {
-                if(data.round === 3){data.money += data.flushValue}
-                return data.score = 'Flush';
+                if(data.round === 3){
+                  data.money += data.flushValue;
+                } else data.score = 'Flush';
         } else this.straight();
     },
     straight: function () {
@@ -134,7 +135,7 @@ export const hierarchy = {
             this.nines = this.checkHand(this.fourNines, whatsOnHand)   
         ];
 
-        let high = [,
+        let high = [
             this.queens = this.checkHand(this.fourQueens, whatsOnHand),
             this.jacks = this.checkHand(this.fourJacks, whatsOnHand),
             this.tenns = this.checkHand(this.fourTens, whatsOnHand),
@@ -197,7 +198,7 @@ export const hierarchy = {
         this.lookForStraight(smallest) === 5){
                     if(data.round === 3){
                         data.money += data.straightValue;
-                    }else return data.score = 'Straight';
+                    }else data.score = 'Straight';
         }else this.threeOfAKind();
     },
     threeOfAKind: function () {
@@ -222,7 +223,7 @@ export const hierarchy = {
         if (this.lookForThreeOfAKind(blockOfCards) === 1){
                 if(data.round === 3){
                     data.money += data.threeOfTheKindValue;
-                }else return data.score = 'Three of a Kind';
+                }else data.score = 'Three of a Kind';
         } else this.twoPairs();
     },
 
@@ -248,7 +249,7 @@ export const hierarchy = {
         if (this.lookForPairs(blockOfCards) === 2){
             if(data.round === 3){
                 data.money += data.twoPairsValue;
-            }else return data.score = '2 Pairs';
+            }else data.score = '2 Pairs';
         } else this.pair();
     },
     pair: function () {
@@ -272,10 +273,10 @@ export const hierarchy = {
 
         if (this.lookForPairs(blockOfCards) === 1) {
                 if(data.round === 3){
-                    data.money += data.pairValue
-                }else return data.score = 'Pair';
+                    data.money += data.pairValue;
+                }else data.score = 'Pair';
             }else if(data.round === 1){
                 data.score = 'Change Cards';
-            }else return data.score = 'Shit Happens';
+            }else data.score = 'Shit Happens';
     }
 };
