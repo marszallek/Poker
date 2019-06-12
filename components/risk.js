@@ -64,7 +64,7 @@ export const riskObj = {
             data.riskMessage = 'Classic Poker';
             data.score = 'You Lost';
             data.round = 5;
-        };      
+        }
     },
     lowCard2: function() {
         let secretCard = 0;
@@ -360,7 +360,7 @@ export const riskObj = {
             document.getElementById('tenthSecret').src = tenthHighCard;
             data.moneyWon *= 100;
             alert('You Smash The Bank');
-            data.secretLevel = 0
+            data.secretLevel = 0;
         }else if (secretCard < 13){
             data.moneyWon = 0;
             data.secretLevel = 0;
