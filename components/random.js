@@ -17,10 +17,9 @@ export const playButtons = {
     },
     collectMoney: function() {
         data.money = data.money + data.moneyWon;
-        data.round = 3;
         data.round = 1;
         data.moneyWon = 0;
-        data.score = 'Good Luck'
+        data.score = 'Good Luck';
     },
     collectMoneyFromRisk: function() {
         data.money = data.money + data.moneyWon;
@@ -31,9 +30,10 @@ export const playButtons = {
         data.riskMessage = 'Classic Poker'
     },
     startOver: function() {
+        if(data.bet > data.money) {data.bet = data.money}
         if(data.money <= 0){
+            data.bet = 0;
             data.score = 'You Lost';
-            this.bet = 0;
             return data.round = 5
         }data.score = 'Good Luck';
         data.round = 1;

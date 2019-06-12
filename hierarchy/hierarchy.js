@@ -44,9 +44,7 @@ export const hierarchy = {
 
         if(sortedHand[0] + 4 === sortedHand[1] && sortedHand[0] + 8 === sortedHand[2] &&
             sortedHand[0] + 12 === sortedHand[3] && sortedHand[0] + 16 === sortedHand[4]){
-                if(data.round === 3){
-                    data.money += data.bigStraightFlushValue;
-                }else data.score = 'Straight Flush';
+            return data.round === 3 ? data.money += data.bigStraightFlushValue : data.score = 'Straight Flush';
         }else this.fourOfAKind();
 
     },
@@ -70,10 +68,8 @@ export const hierarchy = {
         ];
 
         if (this.lookForFourOfAKind(blockOfCards) === 1) {
-                if(data.round === 3){
-                    data.money += data.fourOfTheKindValue;
-                }else data.score = 'Four Of The Kind';
-        } else return this.fullHouse();
+            return data.round === 3 ? data.money += data.fourOfTheKindValue : data.score = 'Four Of The Kind';
+        } else this.fullHouse();
     },
     fullHouse: function () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
@@ -95,9 +91,7 @@ export const hierarchy = {
         ];
         
         if (this.lookForPairs(blockOfCards) === 1 && this.lookForThreeOfAKind(blockOfCards) === 1) {
-                if(data.round === 3){
-                    data.money += data.fullHouseValue;
-                }else data.score = 'Full House';
+            return data.round === 3 ? data.money += data.fullHouseValue : data.score = 'Full House';
         } else this.flush();
     },
     flush: function () {
@@ -111,9 +105,7 @@ export const hierarchy = {
         ];
         
         if (this.lookForFlush(blockOfFlush) === 1) {
-                if(data.round === 3){
-                  data.money += data.flushValue;
-                } else data.score = 'Flush';
+            return data.round === 3 ? data.money += data.flushValue : data.score = 'Flush';
         } else this.straight();
     },
     straight: function () {
@@ -196,9 +188,7 @@ export const hierarchy = {
         this.lookForStraight(medium) === 5 || this.lookForStraight(mediumSmall) === 5 ||
         this.lookForStraight(small) === 5 || this.lookForStraight(smaller) === 5 ||
         this.lookForStraight(smallest) === 5){
-                    if(data.round === 3){
-                        data.money += data.straightValue;
-                    }else data.score = 'Straight';
+            return data.round === 3 ? data.money += data.straightValue : data.score = 'Straight';
         }else this.threeOfAKind();
     },
     threeOfAKind: function () {
@@ -221,9 +211,7 @@ export const hierarchy = {
         ];
 
         if (this.lookForThreeOfAKind(blockOfCards) === 1){
-                if(data.round === 3){
-                    data.money += data.threeOfTheKindValue;
-                }else data.score = 'Three of a Kind';
+            return data.round === 3 ? data.money += data.threeOfTheKindValue : data.score = 'Three of a Kind';
         } else this.twoPairs();
     },
 
@@ -247,11 +235,10 @@ export const hierarchy = {
         ];
 
         if (this.lookForPairs(blockOfCards) === 2){
-            if(data.round === 3){
-                data.money += data.twoPairsValue;
-            }else data.score = '2 Pairs';
+            return data.round === 3 ? data.money += data.twoPairsValue : data.score = '2 Pairs';
         } else this.pair();
     },
+    
     pair: function () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
 
