@@ -1,4 +1,4 @@
-import {data} from '../app.js'
+import {data} from '../app.js';
 
 export let BetButtonComponent = Vue.extend({
     data: function() {
@@ -7,39 +7,39 @@ export let BetButtonComponent = Vue.extend({
     methods: {
         betPlusOne: function () { 
             if(this.bet >= this.money || this.bet + 1 >= this.money){
-                this.bet = this.money
-                return this.money
-            }else return this.bet ++
+                this.bet = this.money;
+                return this.money;
+            }else return this.bet ++;
         },
         betMinusOne: function () {
             if(this.bet <= 0 || this.bet - 1 <= 0) {
                 this.bet = 1;
-            }else return this.bet--
+            }else return this.bet--;
         },
         betPlusTen: function () {
             if(this.bet >= this.money || this.bet + 10 >= this.money){
-                this.bet = this.money
-                return this.money
-            }else return this.bet += 10
+                this.bet = this.money;
+                return this.money;
+            }else return this.bet += 10;
         },
         betMinusTen: function () {
             if(this.bet <= 0 || this.bet - 10 <= 0) {
                 this.bet = 1;
-            }else return this.bet -= 10
+            }else return this.bet -= 10;
         },
         betPlusFifty: function () {
             if(this.bet >= this.money || this.bet + 50 >= this.money){
-                this.bet = this.money
-                return this.money
-            }else return this.bet += 50
+                this.bet = this.money;
+                return this.money;
+            }else return this.bet += 50;
         },
         betMinusFifty: function () {
             if(this.bet <= 0 || this.bet - 50 <= 0) {
                 this.bet = 1;
-            }else return this.bet -= 50
+            }else return this.bet -= 50;
         },
         betMax: function() {
-            this.bet = this.money
+            this.bet = this.money;
         },
     },
     template:   
