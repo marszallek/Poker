@@ -80,7 +80,7 @@
             <div>
                 <div class="play" v-if="round === 1" @click="start()"><button class="playButtons">PLAY</button></div>
                 <!--Heliping Me To Find Missing Sets of Cards-->
-                <div class="play" @click="tillGet('Flush')"><button>FIND</button></div>
+                <!--<div class="play" @click="tillGet('Flush')"><button>FIND</button></div>-->
                 <div class="play" v-if="firstSelected || secondSelected || thirdSelected || fourthSelected || fifthSelected" @click="changeSelected()"><button class="playButtons">CHANGE CARDS & CHECK</button></div>
                 <div class="play" v-if="round === 2 && !firstSelected && !secondSelected && !thirdSelected && !fourthSelected && !fifthSelected" @click="checkButton()"><button class="playButtons">SELECT THE CARDS OR CHECK</button></div>
                 <div class="flexiMenu">

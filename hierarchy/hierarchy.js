@@ -264,6 +264,6 @@ export const hierarchy = {
                 }else data.score = 'Pair';
             }else if(data.round === 1){
                 data.score = 'Change Cards';
-            }else data.score = 'Shit Happens';
+            }else return data.score = 'Shit Happens';
     }
 };
