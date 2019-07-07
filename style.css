@@ -6,6 +6,7 @@
 body{
     background-image: url(./Cards/table.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     margin: auto;
 }
 
