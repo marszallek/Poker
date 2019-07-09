@@ -19,26 +19,14 @@ export const hierarchy = {
     flushClubs: [2, 6, 10, 14, 22, 26, 30, 34, 38, 42, 46, 50],
     flushSpades: [1, 5, 9, 13, 21, 25, 29, 33, 37, 41, 45, 49],
 
-    checkHand: function (whereToLook, onHand) {
-     return whereToLook.filter((x) => onHand.includes(x));
-    },
-    lookForPairs: function (block) {
-        return block.filter((x) => x.length === 2).length;
-    },
-    lookForThreeOfAKind: function (block) {
-        return block.filter((x) => x.length === 3).length;
-    },
-    lookForStraight: function (block) {
-        return block.filter((x) => x.length === 1).length;
-    },
-    lookForFourOfAKind: function (block) {
-        return block.filter((x) => x.length === 4).length;
-    },
-    lookForFlush: function (block){
-        return block.filter((x) => x.length === 5).length;
-    },
+    checkHand: (whereToLook, onHand) => whereToLook.filter((x) => onHand.includes(x)),
+    lookForPairs: (block) => block.filter((x) => x.length === 2).length,
+    lookForThreeOfAKind: (block) => block.filter((x) => x.length === 3).length,
+    lookForStraight: (block) => block.filter((x) => x.length === 1).length,
+    lookForFourOfAKind: (block) => block.filter((x) => x.length === 4).length,
+    lookForFlush: (block) => block.filter((x) => x.length === 5).length,
 
-    straightFlush: function () {
+    straightFlush () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
         let sortedHand = whatsOnHand.sort((a,b) => a-b);
 
@@ -48,7 +36,7 @@ export const hierarchy = {
         }else this.fourOfAKind();
 
     },
-    fourOfAKind: function () {
+    fourOfAKind () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
 
         let blockOfCards = [
@@ -71,7 +59,7 @@ export const hierarchy = {
             return data.round === 3 ? data.money += data.fourOfTheKindValue : data.score = 'Four Of The Kind';
         } else this.fullHouse();
     },
-    fullHouse: function () {
+    fullHouse () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
 
         let blockOfCards = [
@@ -94,7 +82,7 @@ export const hierarchy = {
             return data.round === 3 ? data.money += data.fullHouseValue : data.score = 'Full House';
         } else this.flush();
     },
-    flush: function () {
+    flush () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
 
         let blockOfFlush = [
@@ -108,7 +96,7 @@ export const hierarchy = {
             return data.round === 3 ? data.money += data.flushValue : data.score = 'Flush';
         } else this.straight();
     },
-    straight: function () {
+    straight () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
         
         let highest = [
@@ -191,7 +179,7 @@ export const hierarchy = {
             return data.round === 3 ? data.money += data.straightValue : data.score = 'Straight';
         }else this.threeOfAKind();
     },
-    threeOfAKind: function () {
+    threeOfAKind () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
 
         let blockOfCards = [
@@ -215,7 +203,7 @@ export const hierarchy = {
         } else this.twoPairs();
     },
 
-    twoPairs: function () {
+    twoPairs () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
 
         let blockOfCards = [
@@ -239,7 +227,7 @@ export const hierarchy = {
         } else this.pair();
     },
     
-    pair: function () {
+    pair () {
         let whatsOnHand = [data.one, data.two, data.three, data.four, data.five];
 
         let blockOfCards = [

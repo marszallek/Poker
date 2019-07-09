@@ -1,6 +1,6 @@
 import {playButtons} from './components/random.js';
 import {BetButtonComponent} from './components/betButtons.js';
-import {changeObj} from './components/changeCards.js';
+import {changeSelected} from './components/changeCards.js';
 import {riskObj} from './components/risk.js';
 
 Vue.component('bet-button-component', BetButtonComponent);
@@ -29,160 +29,152 @@ const app = new Vue({
     el: '#app',
     data: data,
     computed: {
-        straightFlushValue: function () {
+        straightFlushValue () {
             return this.bet * 500;
         },
-        fourOfTheKindValue: function () {
+        fourOfTheKindValue () {
             return this.bet * 200;
         },
-        fullHouseValue: function () {
+        fullHouseValue () {
             return this.bet * 50;
         },
-        flushValue: function () {
+        flushValue () {
             return this.bet * 20;
         },
-        straightValue: function () {
+        straightValue () {
             return this.bet * 10;
         },
-        threeOfTheKindValue: function () {
+        threeOfTheKindValue () {
             return this.bet * 5;
         },
-        twoPairsValue: function () {
+        twoPairsValue () {
             return this.bet * 2;
         },
-        pairValue: function () {
+        pairValue () {
             return this.bet;
         },
-        moneyToBeTaken: function() {
-            if(this.score === 'Straight Flush'){
-            	this.moneyWon = this.straightFlushValue;
-            }else if(this.score === 'Four Of The Kind'){
-              this.moneyWon = this.fourOfTheKindValue;
-            }else if(this.score === 'Full House'){
-              this.moneyWon = this.fullHouseValue;
-            }else if(this.score === 'Flush'){
-              this.moneyWon = this.flushValue;
-            }else if(this.score === 'Straight'){
-              this.moneyWon = this.straightValue;
-            }else if(this.score === 'Three of a Kind'){
-              this.moneyWon = this.threeOfTheKindValue;
-            }else if(this.score === '2 Pairs'){
-              this.moneyWon = this.twoPairsValue;
-            }else if(this.score === 'Pair'){
-              this.moneyWon = this.pairValue;
-            }else this.moneyWon = 0;
+        moneyToBeTaken () {
+            if(this.score === 'Straight Flush') return this.moneyWon = this.straightFlushValue;
+            if(this.score === 'Four Of The Kind') return this.moneyWon = this.fourOfTheKindValue;
+            if(this.score === 'Full House') return this.moneyWon = this.fullHouseValue;
+            if(this.score === 'Flush') return this.moneyWon = this.flushValue;
+            if(this.score === 'Straight') return this.moneyWon = this.straightValue;
+            if(this.score === 'Three of a Kind') return this.moneyWon = this.threeOfTheKindValue;
+            if(this.score === '2 Pairs') return this.moneyWon = this.twoPairsValue;
+            if(this.score === 'Pair') return this.moneyWon = this.pairValue;
+            return this.moneyWon = 0;
         },
     },
     methods: {
-        start: function () {
+        start () {
             playButtons.start();
         },
-        checkButton: function() {
+        checkButton () {
             playButtons.checkButton();
         },
-        changeSelected: function() {
-            changeObj.changeSelected();
+        changeSelected () {
+            changeSelected(data);
         },
-        collectMoney: function() {
+        collectMoney () {
             playButtons.collectMoney();
         },
-        collectMoneyFromRisk: function() {
+        collectMoneyFromRisk () {
             playButtons.collectMoneyFromRisk();
         },
-        startOver: function() {
+        startOver () {
             playButtons.startOver();
         },
-        selectFirst: function() {
+        selectFirst () {
             if(this.round === 2){
                 this.firstSelected = !this.firstSelected;
             }else this.firstSelected = this.firstSelected;
         },
-        selectSecond: function() {
+        selectSecond () {
             if(this.round === 2){
                 this.secondSelected = !this.secondSelected;
             }else this.secondSelected = this.secondSelected;
         },
-        selectThird: function() {
+        selectThird () {
             if(this.round === 2){
             this.thirdSelected = !this.thirdSelected;
             }else this.thirdSelected = this.thirdSelected;
         },
-        selectFourth: function() {
+        selectFourth () {
             if(this.round === 2){
             this.fourthSelected = !this.fourthSelected;
             }else this.fourthSelected = this.fourthSelected;
         },
-        selectFifth: function() {
+        selectFifth () {
             if(this.round === 2){
             this.fifthSelected = !this.fifthSelected;
             }else this.fifthSelected = this.fifthSelected;
         },
-        takeARisk: function() {
+        takeARisk () {
             this.round = 4;
             this.secretLevel = 1;
         },
-        lowCard1: function() {
+        lowCard1 () {
             riskObj.lowCard1();
         },
-        lowCard2: function() {
+        lowCard2 () {
             riskObj.lowCard2();
         },
-        lowCard3: function() {
+        lowCard3 () {
             riskObj.lowCard3();
         },
-        lowCard4: function() {
+        lowCard4 () {
             riskObj.lowCard4();
         },
-        lowCard5: function() {
+        lowCard5 () {
             riskObj.lowCard5();
         },
-        lowCard6: function() {
+        lowCard6 () {
             riskObj.lowCard6();
         },
-        lowCard7: function() {
+        lowCard7 () {
             riskObj.lowCard7();
         },
-        lowCard8: function() {
+        lowCard8 () {
             riskObj.lowCard8();
         },
-        lowCard9: function() {
+        lowCard9 () {
             riskObj.lowCard9();
         },
-        lowCard10: function() {
+        lowCard10 () {
             riskObj.lowCard10();
         },
-        highCard1: function() {
+        highCard1 () {
             riskObj.highCard1();
         },
-        highCard2: function() {
+        highCard2 () {
             riskObj.highCard2();
         },
-        highCard3: function() {
+        highCard3 () {
             riskObj.highCard3();
         },
-        highCard4: function() {
+        highCard4 () {
             riskObj.highCard4();
         },
-        highCard5: function() {
+        highCard5 () {
             riskObj.highCard5();
         },
-        highCard6: function() {
+        highCard6 () {
             riskObj.highCard6();
         },
-        highCard7: function() {
+        highCard7 () {
             riskObj.highCard7();
         },
-        highCard8: function() {
+        highCard8 () {
             riskObj.highCard8();
         },
-        highCard9: function() {
+        highCard9 () {
             riskObj.highCard9();
         },
-        highCard10: function() {
+        highCard10 () {
             riskObj.highCard10();
         },
         // for testing invoke when needed
-        tillGet: function (iWant) {
+        tillGet (iWant) {
             playButtons.start();
             if (this.score !== iWant) {
                 this.tillGet(iWant);

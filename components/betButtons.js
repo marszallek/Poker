@@ -1,44 +1,44 @@
 import {data} from '../app.js';
 
 export let BetButtonComponent = Vue.extend({
-    data: function() {
+    data () {
         return data;
     },
     methods: {
-        betPlusOne: function () { 
+        betPlusOne () { 
             if(this.bet >= this.money || this.bet + 1 >= this.money){
                 this.bet = this.money;
                 return this.money;
             }else return this.bet ++;
         },
-        betMinusOne: function () {
+        betMinusOne () {
             if(this.bet <= 0 || this.bet - 1 <= 0) {
                 this.bet = 1;
             }else return this.bet--;
         },
-        betPlusTen: function () {
+        betPlusTen () {
             if(this.bet >= this.money || this.bet + 10 >= this.money){
                 this.bet = this.money;
                 return this.money;
             }else return this.bet += 10;
         },
-        betMinusTen: function () {
+        betMinusTen () {
             if(this.bet <= 0 || this.bet - 10 <= 0) {
                 this.bet = 1;
             }else return this.bet -= 10;
         },
-        betPlusFifty: function () {
+        betPlusFifty () {
             if(this.bet >= this.money || this.bet + 50 >= this.money){
                 this.bet = this.money;
                 return this.money;
             }else return this.bet += 50;
         },
-        betMinusFifty: function () {
+        betMinusFifty () {
             if(this.bet <= 0 || this.bet - 50 <= 0) {
                 this.bet = 1;
             }else return this.bet -= 50;
         },
-        betMax: function() {
+        betMax () {
             this.bet = this.money;
         },
     },

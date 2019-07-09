@@ -3,7 +3,7 @@ import {hierarchy} from '../hierarchy/hierarchy.js';
 
 export const playButtons = {
     allCards: [],
-    start: function () {
+    start () {
         this.allCards = [];
         this.random();
         this.check();
@@ -11,17 +11,17 @@ export const playButtons = {
         data.round = 2;
         data.money -= data.bet;
     },
-    checkButton: function() {
+    checkButton () {
         this.whatIsOnHand();
         data.round = 3;
     },
-    collectMoney: function() {
+    collectMoney () {
         data.money = data.money + data.moneyWon;
         data.round = 1;
         data.moneyWon = 0;
         data.score = 'Good Luck';
     },
-    collectMoneyFromRisk: function() {
+    collectMoneyFromRisk () {
         data.money = data.money + data.moneyWon;
         data.round = 1;
         data.secretLevel = 0;
@@ -29,7 +29,7 @@ export const playButtons = {
         data.score = 'Good Luck';
         data.riskMessage = 'Classic Poker';
     },
-    startOver: function() {
+    startOver () {
         if(data.bet > data.money) {data.bet = data.money;}
         if(data.money <= 0){
             data.bet = 0;
@@ -39,7 +39,7 @@ export const playButtons = {
         data.round = 1;
         data.riskMessage = 'Classic Poker';
     },
-    random: function () {
+    random () {
         let i;
         for(i = 1; i < 53; i ++){
             this.allCards.push(i);
@@ -50,10 +50,10 @@ export const playButtons = {
         data.four = this.allCards.splice(Math.random()*48+1, 1)[0];
         data.five = this.allCards.splice(Math.random()*47+1, 1)[0];
     },
-    whatIsOnHand: function () {
+    whatIsOnHand () {
         hierarchy.straightFlush();
     },
-    check: function () {
+    check () {
         document.getElementById('first').src = `cards/${data.one}.jpg`;
         document.getElementById('second').src = `cards/${data.two}.jpg`;
         document.getElementById('third').src = `cards/${data.three}.jpg`;
